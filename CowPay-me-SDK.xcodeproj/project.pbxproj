@@ -1,0 +1,592 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4A83F03626EBEEE2000A62EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83F03526EBEEE2000A62EB /* AppDelegate.swift */; };
+		4A83F03826EBEEE2000A62EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83F03726EBEEE2000A62EB /* SceneDelegate.swift */; };
+		4A83F03A26EBEEE2000A62EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83F03926EBEEE2000A62EB /* ViewController.swift */; };
+		4A83F03D26EBEEE2000A62EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A83F03B26EBEEE2000A62EB /* Main.storyboard */; };
+		4A83F03F26EBEEE4000A62EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A83F03E26EBEEE4000A62EB /* Assets.xcassets */; };
+		4A83F04226EBEEE4000A62EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A83F04026EBEEE4000A62EB /* LaunchScreen.storyboard */; };
+		4A83F04D26EBEEE5000A62EB /* CowPay_me_SDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83F04C26EBEEE5000A62EB /* CowPay_me_SDKTests.swift */; };
+		4A83F05826EBEEE5000A62EB /* CowPay_me_SDKUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83F05726EBEEE5000A62EB /* CowPay_me_SDKUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4A83F04926EBEEE5000A62EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A83F02A26EBEEE2000A62EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A83F03126EBEEE2000A62EB;
+			remoteInfo = "CowPay-me-SDK";
+		};
+		4A83F05426EBEEE5000A62EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4A83F02A26EBEEE2000A62EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A83F03126EBEEE2000A62EB;
+			remoteInfo = "CowPay-me-SDK";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4A83F03226EBEEE2000A62EB /* CowPay-me-SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CowPay-me-SDK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A83F03526EBEEE2000A62EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4A83F03726EBEEE2000A62EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4A83F03926EBEEE2000A62EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4A83F03C26EBEEE2000A62EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4A83F03E26EBEEE4000A62EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4A83F04126EBEEE4000A62EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4A83F04326EBEEE4000A62EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A83F04826EBEEE5000A62EB /* CowPay-me-SDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CowPay-me-SDKTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A83F04C26EBEEE5000A62EB /* CowPay_me_SDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CowPay_me_SDKTests.swift; sourceTree = "<group>"; };
+		4A83F04E26EBEEE5000A62EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A83F05326EBEEE5000A62EB /* CowPay-me-SDKUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CowPay-me-SDKUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A83F05726EBEEE5000A62EB /* CowPay_me_SDKUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CowPay_me_SDKUITests.swift; sourceTree = "<group>"; };
+		4A83F05926EBEEE5000A62EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4A83F02F26EBEEE2000A62EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A83F04526EBEEE5000A62EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A83F05026EBEEE5000A62EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4A83F02926EBEEE2000A62EB = {
+			isa = PBXGroup;
+			children = (
+				4A83F03426EBEEE2000A62EB /* CowPay-me-SDK */,
+				4A83F04B26EBEEE5000A62EB /* CowPay-me-SDKTests */,
+				4A83F05626EBEEE5000A62EB /* CowPay-me-SDKUITests */,
+				4A83F03326EBEEE2000A62EB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4A83F03326EBEEE2000A62EB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4A83F03226EBEEE2000A62EB /* CowPay-me-SDK.app */,
+				4A83F04826EBEEE5000A62EB /* CowPay-me-SDKTests.xctest */,
+				4A83F05326EBEEE5000A62EB /* CowPay-me-SDKUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4A83F03426EBEEE2000A62EB /* CowPay-me-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				4A83F03526EBEEE2000A62EB /* AppDelegate.swift */,
+				4A83F03726EBEEE2000A62EB /* SceneDelegate.swift */,
+				4A83F03926EBEEE2000A62EB /* ViewController.swift */,
+				4A83F03B26EBEEE2000A62EB /* Main.storyboard */,
+				4A83F03E26EBEEE4000A62EB /* Assets.xcassets */,
+				4A83F04026EBEEE4000A62EB /* LaunchScreen.storyboard */,
+				4A83F04326EBEEE4000A62EB /* Info.plist */,
+			);
+			path = "CowPay-me-SDK";
+			sourceTree = "<group>";
+		};
+		4A83F04B26EBEEE5000A62EB /* CowPay-me-SDKTests */ = {
+			isa = PBXGroup;
+			children = (
+				4A83F04C26EBEEE5000A62EB /* CowPay_me_SDKTests.swift */,
+				4A83F04E26EBEEE5000A62EB /* Info.plist */,
+			);
+			path = "CowPay-me-SDKTests";
+			sourceTree = "<group>";
+		};
+		4A83F05626EBEEE5000A62EB /* CowPay-me-SDKUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4A83F05726EBEEE5000A62EB /* CowPay_me_SDKUITests.swift */,
+				4A83F05926EBEEE5000A62EB /* Info.plist */,
+			);
+			path = "CowPay-me-SDKUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4A83F03126EBEEE2000A62EB /* CowPay-me-SDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A83F05C26EBEEE5000A62EB /* Build configuration list for PBXNativeTarget "CowPay-me-SDK" */;
+			buildPhases = (
+				4A83F02E26EBEEE2000A62EB /* Sources */,
+				4A83F02F26EBEEE2000A62EB /* Frameworks */,
+				4A83F03026EBEEE2000A62EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CowPay-me-SDK";
+			productName = "CowPay-me-SDK";
+			productReference = 4A83F03226EBEEE2000A62EB /* CowPay-me-SDK.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4A83F04726EBEEE5000A62EB /* CowPay-me-SDKTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A83F05F26EBEEE5000A62EB /* Build configuration list for PBXNativeTarget "CowPay-me-SDKTests" */;
+			buildPhases = (
+				4A83F04426EBEEE5000A62EB /* Sources */,
+				4A83F04526EBEEE5000A62EB /* Frameworks */,
+				4A83F04626EBEEE5000A62EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A83F04A26EBEEE5000A62EB /* PBXTargetDependency */,
+			);
+			name = "CowPay-me-SDKTests";
+			productName = "CowPay-me-SDKTests";
+			productReference = 4A83F04826EBEEE5000A62EB /* CowPay-me-SDKTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4A83F05226EBEEE5000A62EB /* CowPay-me-SDKUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A83F06226EBEEE5000A62EB /* Build configuration list for PBXNativeTarget "CowPay-me-SDKUITests" */;
+			buildPhases = (
+				4A83F04F26EBEEE5000A62EB /* Sources */,
+				4A83F05026EBEEE5000A62EB /* Frameworks */,
+				4A83F05126EBEEE5000A62EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4A83F05526EBEEE5000A62EB /* PBXTargetDependency */,
+			);
+			name = "CowPay-me-SDKUITests";
+			productName = "CowPay-me-SDKUITests";
+			productReference = 4A83F05326EBEEE5000A62EB /* CowPay-me-SDKUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4A83F02A26EBEEE2000A62EB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1220;
+				LastUpgradeCheck = 1220;
+				TargetAttributes = {
+					4A83F03126EBEEE2000A62EB = {
+						CreatedOnToolsVersion = 12.2;
+					};
+					4A83F04726EBEEE5000A62EB = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 4A83F03126EBEEE2000A62EB;
+					};
+					4A83F05226EBEEE5000A62EB = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = 4A83F03126EBEEE2000A62EB;
+					};
+				};
+			};
+			buildConfigurationList = 4A83F02D26EBEEE2000A62EB /* Build configuration list for PBXProject "CowPay-me-SDK" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4A83F02926EBEEE2000A62EB;
+			productRefGroup = 4A83F03326EBEEE2000A62EB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4A83F03126EBEEE2000A62EB /* CowPay-me-SDK */,
+				4A83F04726EBEEE5000A62EB /* CowPay-me-SDKTests */,
+				4A83F05226EBEEE5000A62EB /* CowPay-me-SDKUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4A83F03026EBEEE2000A62EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A83F04226EBEEE4000A62EB /* LaunchScreen.storyboard in Resources */,
+				4A83F03F26EBEEE4000A62EB /* Assets.xcassets in Resources */,
+				4A83F03D26EBEEE2000A62EB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A83F04626EBEEE5000A62EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A83F05126EBEEE5000A62EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4A83F02E26EBEEE2000A62EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A83F03A26EBEEE2000A62EB /* ViewController.swift in Sources */,
+				4A83F03626EBEEE2000A62EB /* AppDelegate.swift in Sources */,
+				4A83F03826EBEEE2000A62EB /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A83F04426EBEEE5000A62EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A83F04D26EBEEE5000A62EB /* CowPay_me_SDKTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4A83F04F26EBEEE5000A62EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A83F05826EBEEE5000A62EB /* CowPay_me_SDKUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4A83F04A26EBEEE5000A62EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A83F03126EBEEE2000A62EB /* CowPay-me-SDK */;
+			targetProxy = 4A83F04926EBEEE5000A62EB /* PBXContainerItemProxy */;
+		};
+		4A83F05526EBEEE5000A62EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A83F03126EBEEE2000A62EB /* CowPay-me-SDK */;
+			targetProxy = 4A83F05426EBEEE5000A62EB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4A83F03B26EBEEE2000A62EB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A83F03C26EBEEE2000A62EB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4A83F04026EBEEE4000A62EB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A83F04126EBEEE4000A62EB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4A83F05A26EBEEE5000A62EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4A83F05B26EBEEE5000A62EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4A83F05D26EBEEE5000A62EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "CowPay-me-SDK/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ahmed.CowPay-me-SDK";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4A83F05E26EBEEE5000A62EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "CowPay-me-SDK/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ahmed.CowPay-me-SDK";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4A83F06026EBEEE5000A62EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "CowPay-me-SDKTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ahmed.CowPay-me-SDKTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CowPay-me-SDK.app/CowPay-me-SDK";
+			};
+			name = Debug;
+		};
+		4A83F06126EBEEE5000A62EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "CowPay-me-SDKTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ahmed.CowPay-me-SDKTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CowPay-me-SDK.app/CowPay-me-SDK";
+			};
+			name = Release;
+		};
+		4A83F06326EBEEE5000A62EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "CowPay-me-SDKUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ahmed.CowPay-me-SDKUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "CowPay-me-SDK";
+			};
+			name = Debug;
+		};
+		4A83F06426EBEEE5000A62EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "CowPay-me-SDKUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ahmed.CowPay-me-SDKUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "CowPay-me-SDK";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4A83F02D26EBEEE2000A62EB /* Build configuration list for PBXProject "CowPay-me-SDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A83F05A26EBEEE5000A62EB /* Debug */,
+				4A83F05B26EBEEE5000A62EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A83F05C26EBEEE5000A62EB /* Build configuration list for PBXNativeTarget "CowPay-me-SDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A83F05D26EBEEE5000A62EB /* Debug */,
+				4A83F05E26EBEEE5000A62EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A83F05F26EBEEE5000A62EB /* Build configuration list for PBXNativeTarget "CowPay-me-SDKTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A83F06026EBEEE5000A62EB /* Debug */,
+				4A83F06126EBEEE5000A62EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4A83F06226EBEEE5000A62EB /* Build configuration list for PBXNativeTarget "CowPay-me-SDKUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A83F06326EBEEE5000A62EB /* Debug */,
+				4A83F06426EBEEE5000A62EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4A83F02A26EBEEE2000A62EB /* Project object */;
+}
