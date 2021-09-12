@@ -8,12 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		4A83F03626EBEEE2000A62EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83F03526EBEEE2000A62EB /* AppDelegate.swift */; };
-		4A83F03A26EBEEE2000A62EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83F03926EBEEE2000A62EB /* ViewController.swift */; };
+		4A83F03A26EBEEE2000A62EB /* CowPayInitializerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83F03926EBEEE2000A62EB /* CowPayInitializerViewController.swift */; };
 		4A83F03D26EBEEE2000A62EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A83F03B26EBEEE2000A62EB /* Main.storyboard */; };
 		4A83F03F26EBEEE4000A62EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A83F03E26EBEEE4000A62EB /* Assets.xcassets */; };
 		4A83F04226EBEEE4000A62EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A83F04026EBEEE4000A62EB /* LaunchScreen.storyboard */; };
 		4A83F04D26EBEEE5000A62EB /* CowPay_me_SDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83F04C26EBEEE5000A62EB /* CowPay_me_SDKTests.swift */; };
 		4A83F05826EBEEE5000A62EB /* CowPay_me_SDKUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83F05726EBEEE5000A62EB /* CowPay_me_SDKUITests.swift */; };
+		4A9D147426ECC0A600C0F3E4 /* CowPay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A9D147326ECC0A600C0F3E4 /* CowPay.storyboard */; };
+		4A9D148326ECC3AF00C0F3E4 /* CowPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D148226ECC3AF00C0F3E4 /* CowPayViewController.swift */; };
+		4A9D148F26ECD27200C0F3E4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4A9D148B26ECD27200C0F3E4 /* Localizable.strings */; };
+		4A9D149026ECD27200C0F3E4 /* LocalizationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D148D26ECD27200C0F3E4 /* LocalizationHelper.swift */; };
+		4A9D149726ECD2AE00C0F3E4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D149526ECD2AE00C0F3E4 /* Constants.swift */; };
+		4A9D14BB26ECD55B00C0F3E4 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D14A426ECD55B00C0F3E4 /* UIColorExtension.swift */; };
+		4A9D14BD26ECD55B00C0F3E4 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D14A726ECD55B00C0F3E4 /* UIButtonExtension.swift */; };
+		4A9D14BE26ECD55B00C0F3E4 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D14A826ECD55B00C0F3E4 /* UIImageViewExtension.swift */; };
+		4A9D14BF26ECD55B00C0F3E4 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D14A926ECD55B00C0F3E4 /* UITextFieldExtension.swift */; };
+		4A9D14C026ECD55B00C0F3E4 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D14AA26ECD55B00C0F3E4 /* UILabelExtension.swift */; };
+		4A9D14C126ECD55B00C0F3E4 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D14AB26ECD55B00C0F3E4 /* UIViewControllerExtension.swift */; };
+		4A9D14C226ECD55B00C0F3E4 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D14AC26ECD55B00C0F3E4 /* UITableViewExtension.swift */; };
+		4A9D14C326ECD55B00C0F3E4 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D14AD26ECD55B00C0F3E4 /* UIViewExtension.swift */; };
+		4A9D14C526ECD55B00C0F3E4 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D14AF26ECD55B00C0F3E4 /* UIImageExtension.swift */; };
+		4A9D14C626ECD55B00C0F3E4 /* CGFloatExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D14B026ECD55B00C0F3E4 /* CGFloatExtension.swift */; };
+		4A9D14C726ECD55B00C0F3E4 /* DispatchQueue .swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D14B126ECD55B00C0F3E4 /* DispatchQueue .swift */; };
+		4A9D14C826ECD55B00C0F3E4 /* Encodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D14B226ECD55B00C0F3E4 /* Encodable.swift */; };
+		4A9D14C926ECD55B00C0F3E4 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D14B326ECD55B00C0F3E4 /* StringExtension.swift */; };
+		4A9D14CB26ECD55B00C0F3E4 /* DoubleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D14B526ECD55B00C0F3E4 /* DoubleExtension.swift */; };
+		4A9D14CD26ECD55B00C0F3E4 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D14B726ECD55B00C0F3E4 /* DateExtension.swift */; };
+		4A9D14CE26ECD55B00C0F3E4 /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D14B826ECD55B00C0F3E4 /* TableViewExtension.swift */; };
+		4A9D14CF26ECD55B00C0F3E4 /* UITapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D14B926ECD55B00C0F3E4 /* UITapGestureRecognizer.swift */; };
 		7BD042EEEB546EBBAAE89686 /* Pods_CowPay_me_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F01A8A24D88DC9FDCFC64D5 /* Pods_CowPay_me_SDK.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +59,7 @@
 /* Begin PBXFileReference section */
 		4A83F03226EBEEE2000A62EB /* CowPay-me-SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CowPay-me-SDK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A83F03526EBEEE2000A62EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4A83F03926EBEEE2000A62EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4A83F03926EBEEE2000A62EB /* CowPayInitializerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CowPayInitializerViewController.swift; sourceTree = "<group>"; };
 		4A83F03C26EBEEE2000A62EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4A83F03E26EBEEE4000A62EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A83F04126EBEEE4000A62EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,6 +70,29 @@
 		4A83F05326EBEEE5000A62EB /* CowPay-me-SDKUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CowPay-me-SDKUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A83F05726EBEEE5000A62EB /* CowPay_me_SDKUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CowPay_me_SDKUITests.swift; sourceTree = "<group>"; };
 		4A83F05926EBEEE5000A62EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A9D147326ECC0A600C0F3E4 /* CowPay.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CowPay.storyboard; sourceTree = "<group>"; };
+		4A9D148226ECC3AF00C0F3E4 /* CowPayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CowPayViewController.swift; sourceTree = "<group>"; };
+		4A9D148C26ECD27200C0F3E4 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4A9D148D26ECD27200C0F3E4 /* LocalizationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalizationHelper.swift; sourceTree = "<group>"; };
+		4A9D148E26ECD27200C0F3E4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4A9D149526ECD2AE00C0F3E4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4A9D14A426ECD55B00C0F3E4 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		4A9D14A726ECD55B00C0F3E4 /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		4A9D14A826ECD55B00C0F3E4 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		4A9D14A926ECD55B00C0F3E4 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
+		4A9D14AA26ECD55B00C0F3E4 /* UILabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
+		4A9D14AB26ECD55B00C0F3E4 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		4A9D14AC26ECD55B00C0F3E4 /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
+		4A9D14AD26ECD55B00C0F3E4 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		4A9D14AF26ECD55B00C0F3E4 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		4A9D14B026ECD55B00C0F3E4 /* CGFloatExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloatExtension.swift; sourceTree = "<group>"; };
+		4A9D14B126ECD55B00C0F3E4 /* DispatchQueue .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue .swift"; sourceTree = "<group>"; };
+		4A9D14B226ECD55B00C0F3E4 /* Encodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Encodable.swift; sourceTree = "<group>"; };
+		4A9D14B326ECD55B00C0F3E4 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		4A9D14B526ECD55B00C0F3E4 /* DoubleExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtension.swift; sourceTree = "<group>"; };
+		4A9D14B726ECD55B00C0F3E4 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		4A9D14B826ECD55B00C0F3E4 /* TableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewExtension.swift; sourceTree = "<group>"; };
+		4A9D14B926ECD55B00C0F3E4 /* UITapGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITapGestureRecognizer.swift; sourceTree = "<group>"; };
 		986EC6A57575E605E6F155F1 /* Pods-CowPay-me-SDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CowPay-me-SDK.debug.xcconfig"; path = "Target Support Files/Pods-CowPay-me-SDK/Pods-CowPay-me-SDK.debug.xcconfig"; sourceTree = "<group>"; };
 		9F01A8A24D88DC9FDCFC64D5 /* Pods_CowPay_me_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CowPay_me_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D21C04F86747DCDC9F0C538E /* Pods-CowPay-me-SDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CowPay-me-SDK.release.xcconfig"; path = "Target Support Files/Pods-CowPay-me-SDK/Pods-CowPay-me-SDK.release.xcconfig"; sourceTree = "<group>"; };
@@ -121,9 +166,13 @@
 		4A83F03426EBEEE2000A62EB /* CowPay-me-SDK */ = {
 			isa = PBXGroup;
 			children = (
+				4A9D149426ECD2AE00C0F3E4 /* Constants */,
+				4A9D148A26ECD27200C0F3E4 /* Localization */,
+				4A9D14A226ECD55B00C0F3E4 /* Extensions */,
 				4A83F07426EC09BC000A62EB /* CowPay-me-SDK */,
 				4A83F03526EBEEE2000A62EB /* AppDelegate.swift */,
-				4A83F03926EBEEE2000A62EB /* ViewController.swift */,
+				4A9D148226ECC3AF00C0F3E4 /* CowPayViewController.swift */,
+				4A83F03926EBEEE2000A62EB /* CowPayInitializerViewController.swift */,
 				4A83F04026EBEEE4000A62EB /* LaunchScreen.storyboard */,
 				4A83F04326EBEEE4000A62EB /* Info.plist */,
 			);
@@ -151,10 +200,60 @@
 		4A83F07426EC09BC000A62EB /* CowPay-me-SDK */ = {
 			isa = PBXGroup;
 			children = (
+				4A9D147326ECC0A600C0F3E4 /* CowPay.storyboard */,
 				4A83F03B26EBEEE2000A62EB /* Main.storyboard */,
 				4A83F03E26EBEEE4000A62EB /* Assets.xcassets */,
 			);
 			path = "CowPay-me-SDK";
+			sourceTree = "<group>";
+		};
+		4A9D148A26ECD27200C0F3E4 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				4A9D148B26ECD27200C0F3E4 /* Localizable.strings */,
+				4A9D148D26ECD27200C0F3E4 /* LocalizationHelper.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		4A9D149426ECD2AE00C0F3E4 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				4A9D149526ECD2AE00C0F3E4 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		4A9D14A226ECD55B00C0F3E4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4A9D14A426ECD55B00C0F3E4 /* UIColorExtension.swift */,
+				4A9D14A626ECD55B00C0F3E4 /* ViewsExtensions */,
+				4A9D14B026ECD55B00C0F3E4 /* CGFloatExtension.swift */,
+				4A9D14B126ECD55B00C0F3E4 /* DispatchQueue .swift */,
+				4A9D14B226ECD55B00C0F3E4 /* Encodable.swift */,
+				4A9D14B326ECD55B00C0F3E4 /* StringExtension.swift */,
+				4A9D14B526ECD55B00C0F3E4 /* DoubleExtension.swift */,
+				4A9D14B726ECD55B00C0F3E4 /* DateExtension.swift */,
+				4A9D14B826ECD55B00C0F3E4 /* TableViewExtension.swift */,
+				4A9D14B926ECD55B00C0F3E4 /* UITapGestureRecognizer.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4A9D14A626ECD55B00C0F3E4 /* ViewsExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				4A9D14A726ECD55B00C0F3E4 /* UIButtonExtension.swift */,
+				4A9D14A826ECD55B00C0F3E4 /* UIImageViewExtension.swift */,
+				4A9D14A926ECD55B00C0F3E4 /* UITextFieldExtension.swift */,
+				4A9D14AA26ECD55B00C0F3E4 /* UILabelExtension.swift */,
+				4A9D14AB26ECD55B00C0F3E4 /* UIViewControllerExtension.swift */,
+				4A9D14AC26ECD55B00C0F3E4 /* UITableViewExtension.swift */,
+				4A9D14AD26ECD55B00C0F3E4 /* UIViewExtension.swift */,
+				4A9D14AF26ECD55B00C0F3E4 /* UIImageExtension.swift */,
+			);
+			path = ViewsExtensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +343,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 4A83F02926EBEEE2000A62EB;
 			productRefGroup = 4A83F03326EBEEE2000A62EB /* Products */;
@@ -262,9 +362,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A9D148F26ECD27200C0F3E4 /* Localizable.strings in Resources */,
 				4A83F04226EBEEE4000A62EB /* LaunchScreen.storyboard in Resources */,
 				4A83F03F26EBEEE4000A62EB /* Assets.xcassets in Resources */,
 				4A83F03D26EBEEE2000A62EB /* Main.storyboard in Resources */,
+				4A9D147426ECC0A600C0F3E4 /* CowPay.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,8 +433,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A83F03A26EBEEE2000A62EB /* ViewController.swift in Sources */,
+				4A9D14C326ECD55B00C0F3E4 /* UIViewExtension.swift in Sources */,
+				4A9D14C526ECD55B00C0F3E4 /* UIImageExtension.swift in Sources */,
+				4A9D14BE26ECD55B00C0F3E4 /* UIImageViewExtension.swift in Sources */,
+				4A9D149726ECD2AE00C0F3E4 /* Constants.swift in Sources */,
+				4A9D14BB26ECD55B00C0F3E4 /* UIColorExtension.swift in Sources */,
+				4A9D14C026ECD55B00C0F3E4 /* UILabelExtension.swift in Sources */,
+				4A9D14CF26ECD55B00C0F3E4 /* UITapGestureRecognizer.swift in Sources */,
+				4A9D14C926ECD55B00C0F3E4 /* StringExtension.swift in Sources */,
+				4A9D14CD26ECD55B00C0F3E4 /* DateExtension.swift in Sources */,
+				4A9D149026ECD27200C0F3E4 /* LocalizationHelper.swift in Sources */,
+				4A9D14C726ECD55B00C0F3E4 /* DispatchQueue .swift in Sources */,
+				4A9D14BF26ECD55B00C0F3E4 /* UITextFieldExtension.swift in Sources */,
+				4A9D14C626ECD55B00C0F3E4 /* CGFloatExtension.swift in Sources */,
+				4A9D148326ECC3AF00C0F3E4 /* CowPayViewController.swift in Sources */,
+				4A9D14BD26ECD55B00C0F3E4 /* UIButtonExtension.swift in Sources */,
+				4A9D14CB26ECD55B00C0F3E4 /* DoubleExtension.swift in Sources */,
+				4A9D14C126ECD55B00C0F3E4 /* UIViewControllerExtension.swift in Sources */,
+				4A83F03A26EBEEE2000A62EB /* CowPayInitializerViewController.swift in Sources */,
 				4A83F03626EBEEE2000A62EB /* AppDelegate.swift in Sources */,
+				4A9D14C226ECD55B00C0F3E4 /* UITableViewExtension.swift in Sources */,
+				4A9D14C826ECD55B00C0F3E4 /* Encodable.swift in Sources */,
+				4A9D14CE26ECD55B00C0F3E4 /* TableViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +504,15 @@
 				4A83F04126EBEEE4000A62EB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		4A9D148B26ECD27200C0F3E4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4A9D148C26ECD27200C0F3E4 /* ar */,
+				4A9D148E26ECD27200C0F3E4 /* en */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
