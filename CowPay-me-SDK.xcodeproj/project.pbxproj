@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4A83F03626EBEEE2000A62EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83F03526EBEEE2000A62EB /* AppDelegate.swift */; };
-		4A83F03A26EBEEE2000A62EB /* CowPayInitializerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83F03926EBEEE2000A62EB /* CowPayInitializerViewController.swift */; };
+		4A83F03A26EBEEE2000A62EB /* CowPayInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83F03926EBEEE2000A62EB /* CowPayInitializer.swift */; };
 		4A83F03D26EBEEE2000A62EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A83F03B26EBEEE2000A62EB /* Main.storyboard */; };
 		4A83F03F26EBEEE4000A62EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A83F03E26EBEEE4000A62EB /* Assets.xcassets */; };
 		4A83F04226EBEEE4000A62EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A83F04026EBEEE4000A62EB /* LaunchScreen.storyboard */; };
@@ -37,6 +37,12 @@
 		4A9D14CE26ECD55B00C0F3E4 /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D14B826ECD55B00C0F3E4 /* TableViewExtension.swift */; };
 		4A9D14CF26ECD55B00C0F3E4 /* UITapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D14B926ECD55B00C0F3E4 /* UITapGestureRecognizer.swift */; };
 		7BD042EEEB546EBBAAE89686 /* Pods_CowPay_me_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F01A8A24D88DC9FDCFC64D5 /* Pods_CowPay_me_SDK.framework */; };
+		B18CF64626EFCB480099EBBC /* ServiceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CF64526EFCB480099EBBC /* ServiceApi.swift */; };
+		B18CF64E26EFCDB60099EBBC /* CowpaySDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CF64D26EFCDB60099EBBC /* CowpaySDK.swift */; };
+		B18CF65726EFD3FD0099EBBC /* MyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CF65626EFD3FD0099EBBC /* MyCode.swift */; };
+		B18CF66226EFD8B50099EBBC /* NVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CF66126EFD8B50099EBBC /* NVCViewController.swift */; };
+		B18CF66A26EFDDC20099EBBC /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CF66926EFDDC20099EBBC /* Interactor.swift */; };
+		B18CF67026EFE0090099EBBC /* PaymentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CF66F26EFE0090099EBBC /* PaymentInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +65,7 @@
 /* Begin PBXFileReference section */
 		4A83F03226EBEEE2000A62EB /* CowPay-me-SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CowPay-me-SDK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A83F03526EBEEE2000A62EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4A83F03926EBEEE2000A62EB /* CowPayInitializerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CowPayInitializerViewController.swift; sourceTree = "<group>"; };
+		4A83F03926EBEEE2000A62EB /* CowPayInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CowPayInitializer.swift; sourceTree = "<group>"; };
 		4A83F03C26EBEEE2000A62EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4A83F03E26EBEEE4000A62EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A83F04126EBEEE4000A62EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -95,6 +101,12 @@
 		4A9D14B926ECD55B00C0F3E4 /* UITapGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITapGestureRecognizer.swift; sourceTree = "<group>"; };
 		986EC6A57575E605E6F155F1 /* Pods-CowPay-me-SDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CowPay-me-SDK.debug.xcconfig"; path = "Target Support Files/Pods-CowPay-me-SDK/Pods-CowPay-me-SDK.debug.xcconfig"; sourceTree = "<group>"; };
 		9F01A8A24D88DC9FDCFC64D5 /* Pods_CowPay_me_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CowPay_me_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B18CF64526EFCB480099EBBC /* ServiceApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceApi.swift; sourceTree = "<group>"; };
+		B18CF64D26EFCDB60099EBBC /* CowpaySDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CowpaySDK.swift; sourceTree = "<group>"; };
+		B18CF65626EFD3FD0099EBBC /* MyCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCode.swift; sourceTree = "<group>"; };
+		B18CF66126EFD8B50099EBBC /* NVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NVCViewController.swift; sourceTree = "<group>"; };
+		B18CF66926EFDDC20099EBBC /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
+		B18CF66F26EFE0090099EBBC /* PaymentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentInfo.swift; sourceTree = "<group>"; };
 		D21C04F86747DCDC9F0C538E /* Pods-CowPay-me-SDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CowPay-me-SDK.release.xcconfig"; path = "Target Support Files/Pods-CowPay-me-SDK/Pods-CowPay-me-SDK.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,15 +178,20 @@
 		4A83F03426EBEEE2000A62EB /* CowPay-me-SDK */ = {
 			isa = PBXGroup;
 			children = (
+				B18CF66E26EFDDD20099EBBC /* Model */,
+				B18CF65226EFD21A0099EBBC /* SDK */,
+				B18CF64426EFCB2A0099EBBC /* RemoteDS */,
 				4A9D149426ECD2AE00C0F3E4 /* Constants */,
 				4A9D148A26ECD27200C0F3E4 /* Localization */,
 				4A9D14A226ECD55B00C0F3E4 /* Extensions */,
 				4A83F07426EC09BC000A62EB /* CowPay-me-SDK */,
 				4A83F03526EBEEE2000A62EB /* AppDelegate.swift */,
 				4A9D148226ECC3AF00C0F3E4 /* CowPayViewController.swift */,
-				4A83F03926EBEEE2000A62EB /* CowPayInitializerViewController.swift */,
+				4A83F03926EBEEE2000A62EB /* CowPayInitializer.swift */,
 				4A83F04026EBEEE4000A62EB /* LaunchScreen.storyboard */,
 				4A83F04326EBEEE4000A62EB /* Info.plist */,
+				B18CF65626EFD3FD0099EBBC /* MyCode.swift */,
+				B18CF66126EFD8B50099EBBC /* NVCViewController.swift */,
 			);
 			path = "CowPay-me-SDK";
 			sourceTree = "<group>";
@@ -254,6 +271,31 @@
 				4A9D14AF26ECD55B00C0F3E4 /* UIImageExtension.swift */,
 			);
 			path = ViewsExtensions;
+			sourceTree = "<group>";
+		};
+		B18CF64426EFCB2A0099EBBC /* RemoteDS */ = {
+			isa = PBXGroup;
+			children = (
+				B18CF64526EFCB480099EBBC /* ServiceApi.swift */,
+			);
+			path = RemoteDS;
+			sourceTree = "<group>";
+		};
+		B18CF65226EFD21A0099EBBC /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				B18CF64D26EFCDB60099EBBC /* CowpaySDK.swift */,
+				B18CF66926EFDDC20099EBBC /* Interactor.swift */,
+			);
+			path = SDK;
+			sourceTree = "<group>";
+		};
+		B18CF66E26EFDDD20099EBBC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B18CF66F26EFE0090099EBBC /* PaymentInfo.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -435,13 +477,17 @@
 			files = (
 				4A9D14C326ECD55B00C0F3E4 /* UIViewExtension.swift in Sources */,
 				4A9D14C526ECD55B00C0F3E4 /* UIImageExtension.swift in Sources */,
+				B18CF66226EFD8B50099EBBC /* NVCViewController.swift in Sources */,
 				4A9D14BE26ECD55B00C0F3E4 /* UIImageViewExtension.swift in Sources */,
 				4A9D149726ECD2AE00C0F3E4 /* Constants.swift in Sources */,
+				B18CF64626EFCB480099EBBC /* ServiceApi.swift in Sources */,
 				4A9D14BB26ECD55B00C0F3E4 /* UIColorExtension.swift in Sources */,
 				4A9D14C026ECD55B00C0F3E4 /* UILabelExtension.swift in Sources */,
+				B18CF64E26EFCDB60099EBBC /* CowpaySDK.swift in Sources */,
 				4A9D14CF26ECD55B00C0F3E4 /* UITapGestureRecognizer.swift in Sources */,
 				4A9D14C926ECD55B00C0F3E4 /* StringExtension.swift in Sources */,
 				4A9D14CD26ECD55B00C0F3E4 /* DateExtension.swift in Sources */,
+				B18CF66A26EFDDC20099EBBC /* Interactor.swift in Sources */,
 				4A9D149026ECD27200C0F3E4 /* LocalizationHelper.swift in Sources */,
 				4A9D14C726ECD55B00C0F3E4 /* DispatchQueue .swift in Sources */,
 				4A9D14BF26ECD55B00C0F3E4 /* UITextFieldExtension.swift in Sources */,
@@ -450,10 +496,12 @@
 				4A9D14BD26ECD55B00C0F3E4 /* UIButtonExtension.swift in Sources */,
 				4A9D14CB26ECD55B00C0F3E4 /* DoubleExtension.swift in Sources */,
 				4A9D14C126ECD55B00C0F3E4 /* UIViewControllerExtension.swift in Sources */,
-				4A83F03A26EBEEE2000A62EB /* CowPayInitializerViewController.swift in Sources */,
+				4A83F03A26EBEEE2000A62EB /* CowPayInitializer.swift in Sources */,
 				4A83F03626EBEEE2000A62EB /* AppDelegate.swift in Sources */,
 				4A9D14C226ECD55B00C0F3E4 /* UITableViewExtension.swift in Sources */,
 				4A9D14C826ECD55B00C0F3E4 /* Encodable.swift in Sources */,
+				B18CF65726EFD3FD0099EBBC /* MyCode.swift in Sources */,
+				B18CF67026EFE0090099EBBC /* PaymentInfo.swift in Sources */,
 				4A9D14CE26ECD55B00C0F3E4 /* TableViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
