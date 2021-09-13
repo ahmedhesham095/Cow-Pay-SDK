@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4A6D9D0F26EFE2B1002A5536 /* MonthYearPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6D9D0E26EFE2B1002A5536 /* MonthYearPickerView.swift */; };
 		4A83F03626EBEEE2000A62EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83F03526EBEEE2000A62EB /* AppDelegate.swift */; };
 		4A83F03A26EBEEE2000A62EB /* CowPayInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A83F03926EBEEE2000A62EB /* CowPayInitializer.swift */; };
 		4A83F03D26EBEEE2000A62EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A83F03B26EBEEE2000A62EB /* Main.storyboard */; };
@@ -44,6 +43,7 @@
 		B18CF66226EFD8B50099EBBC /* NVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CF66126EFD8B50099EBBC /* NVCViewController.swift */; };
 		B18CF66A26EFDDC20099EBBC /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CF66926EFDDC20099EBBC /* Interactor.swift */; };
 		B18CF67026EFE0090099EBBC /* PaymentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CF66F26EFE0090099EBBC /* PaymentInfo.swift */; };
+		B18CF67B26EFFA8E0099EBBC /* MonthYearPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CF67A26EFFA8E0099EBBC /* MonthYearPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +109,7 @@
 		B18CF66126EFD8B50099EBBC /* NVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NVCViewController.swift; sourceTree = "<group>"; };
 		B18CF66926EFDDC20099EBBC /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		B18CF66F26EFE0090099EBBC /* PaymentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentInfo.swift; sourceTree = "<group>"; };
+		B18CF67A26EFFA8E0099EBBC /* MonthYearPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthYearPickerView.swift; sourceTree = "<group>"; };
 		D21C04F86747DCDC9F0C538E /* Pods-CowPay-me-SDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CowPay-me-SDK.release.xcconfig"; path = "Target Support Files/Pods-CowPay-me-SDK/Pods-CowPay-me-SDK.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -246,6 +247,7 @@
 		4A9D14A226ECD55B00C0F3E4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B18CF67A26EFFA8E0099EBBC /* MonthYearPickerView.swift */,
 				4A9D14A426ECD55B00C0F3E4 /* UIColorExtension.swift */,
 				4A9D14A626ECD55B00C0F3E4 /* ViewsExtensions */,
 				4A9D14B026ECD55B00C0F3E4 /* CGFloatExtension.swift */,
@@ -494,6 +496,7 @@
 				4A9D149026ECD27200C0F3E4 /* LocalizationHelper.swift in Sources */,
 				4A9D14C726ECD55B00C0F3E4 /* DispatchQueue .swift in Sources */,
 				4A9D14BF26ECD55B00C0F3E4 /* UITextFieldExtension.swift in Sources */,
+				B18CF67B26EFFA8E0099EBBC /* MonthYearPickerView.swift in Sources */,
 				4A9D14C626ECD55B00C0F3E4 /* CGFloatExtension.swift in Sources */,
 				4A9D148326ECC3AF00C0F3E4 /* CowPayViewController.swift in Sources */,
 				4A9D14BD26ECD55B00C0F3E4 /* UIButtonExtension.swift in Sources */,

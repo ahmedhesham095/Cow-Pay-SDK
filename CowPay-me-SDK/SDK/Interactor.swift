@@ -10,29 +10,6 @@ import CommonCrypto
 
 class Interactor {
     
-    
-    func sendCreaditCard(cardNumber:String,cardName:String,month:String,year:String,cvv:String){
-        var json = getBaseJson()
-        json["card_number"] = cardNumber
-        json["cvv"] = cvv
-        json["card_holder"] = cardName
-        json["expiry_year"] = year
-        json["expiry_month"] = month
-     
-        ServiceApi.sendCreditCard(json: json)
-    }
-    
-    func sendCashCollectino(address:String,floor:String,district:String,apartment:String,index:Int){
-        var json = getBaseJson()
-        json["address"] = address
-        json["floor"] = floor
-        json["district"] = district
-        json["apartment"] = apartment
-        json["expiry_month"] = cityCodes[index]
-     
-        ServiceApi.sendCashCollectino(json: json)
-    }
-
     private var cityCodes = [ 0 : "EG-01",
                  1 : "EG-01",
                  2 : "EG-02",
@@ -55,10 +32,43 @@ class Interactor {
                  19 : "EG-20",
                  20 : "EG-21",
                  21 : "EG-22"]
+    
+    func sendCreaditCard(cardNumber:String,cardName:String,month:String,year:String,cvv:String){
+        var json = getBaseJson()
+        json["card_number"] = cardNumber
+        json["cvv"] = cvv
+        json["card_holder"] = cardName
+        json["expiry_year"] = year
+        json["expiry_month"] = month
+     
+        ServiceApi.sendCreditCard(json: json){ res , err in
+            print("res")
+            print(res?["token"])
+            print("err")
+            print(err)
+        }
+    }
+    
+    func sendCashCollectino(address:String,floor:String,district:String,apartment:String,index:Int){
+        var json = getBaseJson()
+        json["address"] = address
+        json["floor"] = floor
+        json["district"] = district
+        json["apartment"] = apartment
+        json["expiry_month"] = cityCodes[index]
+     
+        ServiceApi.sendCashCollectino(json: json){ res , err in
+            
+        }
+    }
+
+
 
     
     func sendFawry(){
-        ServiceApi.sendFawry(json:getBaseJson())
+        ServiceApi.sendFawry(json:getBaseJson()){ res , err in
+            print(res)
+        }
        
     }
     
