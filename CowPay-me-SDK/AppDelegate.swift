@@ -31,7 +31,6 @@ extension AppDelegate {
     
     func setRoot(withController viewController: UIViewController,
                  animated: Bool = true) {
-        
         guard let window = self.window else {
             return
         }
