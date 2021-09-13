@@ -80,6 +80,7 @@ class CowPayViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.expiryDateLabelTapped))
         txtExpiry.isUserInteractionEnabled = true
         txtExpiry.addGestureRecognizer(tapGesture)
+        selectectedCity = "0"
     }
 
     @IBAction func setupCreditCard(_ sender: Any) {
@@ -117,7 +118,7 @@ class CowPayViewController: UIViewController {
         self.cities.forEach({ (city) in
             let firstAction: UIAlertAction = UIAlertAction(title: city , style: .default) { action -> Void in
                 self.lblGovernment.text = city
-                self.selectectedCity = "\(self.cities.index(of: city))"
+                self.selectectedCity = "\(self.cities.firstIndex(of: city) ?? 0)"
             }
             actionSheetController.addAction(firstAction)
         })
@@ -131,11 +132,15 @@ class CowPayViewController: UIViewController {
     
     @IBAction func confirmPayment(_ sender: Any) {
         if selectedPaymentType == .credit {
-            if expiryDateString == nil , txtCardNumber.text?.isEmpty == true , txtCVV.text?.isEmpty == true , txtCardHolderName.text?.isEmpty == true {
+            if expiryDateString == nil || txtCardNumber.text?.isEmpty == true || txtCVV.text?.isEmpty == true || txtCardHolderName.text?.isEmpty == true {
                 AlertMessage(title: "", userMessage: "Please fill all the fields")
             } else {
                 //- Credit Card data
-                print("Bassiouny !!! \(cardNumber ?? "") \(expiryDateString ?? "") \(CVV ?? "") \(cardHolderName ?? "")")
+                if txtCardNumber.text?.luhnCheck() == false || txtCardNumber.text?.isStringContainsOnlyNumbers() == false || txtCardNumber.text?.count ?? 0 < 12 {
+                    AlertMessage(title: "", userMessage: "Invalid Card Number")
+                    return
+                }
+                print("Bassiouny !!! \(txtCardNumber.text ?? "") \(expiryDateString ?? "") \(CVV ?? "") \(txtCardHolderName.text ?? "")")
             }
         }
         
@@ -148,6 +153,10 @@ class CowPayViewController: UIViewController {
             if txtEmail.text?.isEmpty == false , txtAddress.text?.isEmpty == false , txtFloor.text?.isEmpty == false , txtDistrict.text?.isEmpty == false , txtApartment.text?.isEmpty == false , selectectedCity != nil , txtName.text?.isEmpty == false , txtPhone.text?.isEmpty == false {
                 print("Bassiouny !!! \(txtEmail.text ?? "")  \(txtAddress.text ?? "") \(txtFloor.text ?? "") \(txtDistrict.text ?? "")  \(txtApartment.text ?? "") \(selectectedCity ?? "")")
             } else {
+                if txtEmail.text?.isEmail == false {
+                    AlertMessage(title: "", userMessage: "Please Fill a valid Email")
+                    return
+                }
               AlertMessage(title: "", userMessage: "Please Fill all the fields")
             }
         }
@@ -186,6 +195,7 @@ class CowPayViewController: UIViewController {
 //- Mark:// Validations
 extension CowPayViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
+        /*
         if textField == txtCardNumber {
             if let txt = textField.text {
                 if txt.count >= 13 && txt.isStringContainsOnlyNumbers() && txt.luhnCheck() {
@@ -197,6 +207,7 @@ extension CowPayViewController: UITextFieldDelegate {
                 AlertMessage(title: "", userMessage: "Please Enter a card Number")
             }
         }
+        
         if textField == txtCardHolderName {
             if textField.text?.isEmpty == true {
                 AlertMessage(title: "", userMessage: "Please Enter a card holder name")
@@ -218,6 +229,7 @@ extension CowPayViewController: UITextFieldDelegate {
                 AlertMessage(title: "", userMessage: "Please Enter an valid Email")
             }
         }
+ */
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
