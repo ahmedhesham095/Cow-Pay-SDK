@@ -34,6 +34,8 @@ class CowPayViewController: UIViewController {
     @IBOutlet weak var txtDistrict: UITextField!
     @IBOutlet weak var txtApartment: UITextField!
     @IBOutlet weak var lblGovernment: UILabel!
+    @IBOutlet weak var txtName: UITextField!
+    @IBOutlet weak var txtPhone: UITextField!
     let expiryDatePicker = MonthYearPickerView()
     var expiryDateToolBar: UIToolbar?
     var selectedPaymentType: CardType?
@@ -129,8 +131,8 @@ class CowPayViewController: UIViewController {
     
     @IBAction func confirmPayment(_ sender: Any) {
         if selectedPaymentType == .credit {
-            if expiryDateString?.isEmpty == true {
-                AlertMessage(title: "", userMessage: "Please Choose Expiry Date")
+            if expiryDateString == nil , txtCardNumber.text?.isEmpty == true , txtCVV.text?.isEmpty == true , txtCardHolderName.text?.isEmpty == true {
+                AlertMessage(title: "", userMessage: "Please fill all the fields")
             } else {
                 //- Credit Card data
                 print("Bassiouny !!! \(cardNumber ?? "") \(expiryDateString ?? "") \(CVV ?? "") \(cardHolderName ?? "")")
@@ -143,7 +145,7 @@ class CowPayViewController: UIViewController {
         
         if selectedPaymentType == .cashCollection {
             
-            if txtEmail.text?.isEmpty == false , txtAddress.text?.isEmpty == false , txtFloor.text?.isEmpty == false , txtDistrict.text?.isEmpty == false , txtApartment.text?.isEmpty == false , selectectedCity?.isEmpty == false {
+            if txtEmail.text?.isEmpty == false , txtAddress.text?.isEmpty == false , txtFloor.text?.isEmpty == false , txtDistrict.text?.isEmpty == false , txtApartment.text?.isEmpty == false , selectectedCity != nil , txtName.text?.isEmpty == false , txtPhone.text?.isEmpty == false {
                 print("Bassiouny !!! \(txtEmail.text ?? "")  \(txtAddress.text ?? "") \(txtFloor.text ?? "") \(txtDistrict.text ?? "")  \(txtApartment.text ?? "") \(selectectedCity ?? "")")
             } else {
               AlertMessage(title: "", userMessage: "Please Fill all the fields")
