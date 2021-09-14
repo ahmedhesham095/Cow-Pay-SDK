@@ -94,6 +94,14 @@ class CowPayViewController: UIViewController {
         self.present(dialogueVC, animated: true, completion: nil)
  */
         // ---------------------------------------------------------- //
+        
+        setUserInfo()
+    }
+    
+    private func setUserInfo(){
+        txtEmail.text = CowpaySDK.paymentInfo?.customerEmail
+        txtName.text = CowpaySDK.paymentInfo?.customerName
+        txtPhone.text = CowpaySDK.paymentInfo?.customerMobile
     }
 
     @IBAction func setupCreditCard(_ sender: Any) {
@@ -185,7 +193,25 @@ class CowPayViewController: UIViewController {
         if selectedPaymentType == .cashCollection {
             
             if txtEmail.text?.isEmpty == false , txtAddress.text?.isEmpty == false , txtFloor.text?.isEmpty == false , txtDistrict.text?.isEmpty == false , txtApartment.text?.isEmpty == false , selectectedCity != nil , txtName.text?.isEmpty == false , txtPhone.text?.isEmpty == false {
-                print("Bassiouny !!! \(txtEmail.text ?? "")  \(txtAddress.text ?? "") \(txtFloor.text ?? "") \(txtDistrict.text ?? "")  \(txtApartment.text ?? "") \(selectectedCity ?? "")")
+
+                startLoading()
+                Interactor().sendCashCollection(name: txtName.text!,email: txtEmail.text!,phone: txtPhone.text!,address: txtAddress.text!,floor: txtFloor.text!,district: txtDistrict.text!,apartment: txtApartment.text!,index: Int(selectectedCity ?? "0") ?? 0){ data , erro in
+                    self.stopLoading()
+                    if let msg = erro {
+                        self.AlertMessage(title: "error".localized(), userMessage: msg)
+                  
+                    }
+                    
+                    if let obj = data {
+                        let dialogueVC = CowPayDialogueViewController()
+                        dialogueVC.modalPresentationStyle = .overCurrentContext
+                        dialogueVC.action = {
+                            CowpaySDK.callback?.successByCashCollection(cashCollection: obj)
+                            self.navigationController?.dismiss(animated: true, completion: nil)
+                        }
+                        self.present(dialogueVC, animated: true, completion: nil)
+                    }
+                }
             } else {
                 if txtEmail.text?.isEmail == false {
                     AlertMessage(title: "", userMessage: "Please Fill a valid Email")

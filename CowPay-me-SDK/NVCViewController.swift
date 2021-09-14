@@ -8,6 +8,11 @@
 import UIKit
 
 class NVCViewController: UIViewController,CowpayCallback {
+    func successByCashCollection(cashCollection: CashCollection?) {
+        print("call back successByCashCollection ")
+        print(cashCollection?.cowpayReferenceId)
+    }
+    
     
     func successByFawry(fawry: Fawry?) {
         print("call back")

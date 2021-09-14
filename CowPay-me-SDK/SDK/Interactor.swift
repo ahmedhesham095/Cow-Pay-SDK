@@ -49,16 +49,29 @@ class Interactor {
         }
     }
     
-    func sendCashCollectino(address:String,floor:String,district:String,apartment:String,index:Int){
+    func sendCashCollection(name:String,email:String,phone:String,address:String,floor:String,district:String,apartment:String,index:Int,completion: @escaping (CashCollection?,String?) -> Void){
         var json = getBaseJson()
         json["address"] = address
         json["floor"] = floor
         json["district"] = district
         json["apartment"] = apartment
         json["expiry_month"] = cityCodes[index]
+        json["customer_name"] = name
+        json["customer_email"] = email
+        json["customer_mobile"] = phone
      
         ServiceApi.sendCashCollectino(json: json){ res , err in
+            if let data = res {
+                completion(CashCollection(
+                    paymentGatewayReferenceId: data["payment_gateway_reference_id"] as! String,
+                    merchantReferenceId:  data["merchant_reference_id"] as! String,
+                    cowpayReferenceId:  data["cowpay_reference_id"] as! Int
+                ),nil)
             
+            }
+            if let msg = err {
+                completion(nil,msg)
+            }
         }
     }
 

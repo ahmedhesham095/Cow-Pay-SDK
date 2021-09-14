@@ -8,5 +8,6 @@
 import Foundation
 
 protocol CowpayCallback {
-    func successByFawry(fawry:Fawry?) 
+    func successByFawry(fawry:Fawry?)
+    func successByCashCollection(cashCollection:CashCollection?)
 }

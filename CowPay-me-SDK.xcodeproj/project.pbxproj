@@ -42,6 +42,7 @@
 		7BD042EEEB546EBBAAE89686 /* Pods_CowPay_me_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F01A8A24D88DC9FDCFC64D5 /* Pods_CowPay_me_SDK.framework */; };
 		B17FE7B926F1486400AA1ECE /* Fawry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17FE7B826F1486400AA1ECE /* Fawry.swift */; };
 		B17FE7BE26F14D5200AA1ECE /* CowpayCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17FE7BD26F14D5200AA1ECE /* CowpayCallback.swift */; };
+		B17FE7C326F1521A00AA1ECE /* CashCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17FE7C226F1521A00AA1ECE /* CashCollection.swift */; };
 		B18CF64626EFCB480099EBBC /* ServiceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CF64526EFCB480099EBBC /* ServiceApi.swift */; };
 		B18CF64E26EFCDB60099EBBC /* CowpaySDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CF64D26EFCDB60099EBBC /* CowpaySDK.swift */; };
 		B18CF65726EFD3FD0099EBBC /* MyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CF65626EFD3FD0099EBBC /* MyCode.swift */; };
@@ -113,6 +114,7 @@
 		9F01A8A24D88DC9FDCFC64D5 /* Pods_CowPay_me_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CowPay_me_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B17FE7B826F1486400AA1ECE /* Fawry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fawry.swift; sourceTree = "<group>"; };
 		B17FE7BD26F14D5200AA1ECE /* CowpayCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CowpayCallback.swift; sourceTree = "<group>"; };
+		B17FE7C226F1521A00AA1ECE /* CashCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashCollection.swift; sourceTree = "<group>"; };
 		B18CF64526EFCB480099EBBC /* ServiceApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceApi.swift; sourceTree = "<group>"; };
 		B18CF64D26EFCDB60099EBBC /* CowpaySDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CowpaySDK.swift; sourceTree = "<group>"; };
 		B18CF65626EFD3FD0099EBBC /* MyCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCode.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 			children = (
 				B18CF66F26EFE0090099EBBC /* PaymentInfo.swift */,
 				B17FE7B826F1486400AA1ECE /* Fawry.swift */,
+				B17FE7C226F1521A00AA1ECE /* CashCollection.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				4A9D14C026ECD55B00C0F3E4 /* UILabelExtension.swift in Sources */,
 				B18CF64E26EFCDB60099EBBC /* CowpaySDK.swift in Sources */,
 				4A9D14CF26ECD55B00C0F3E4 /* UITapGestureRecognizer.swift in Sources */,
+				B17FE7C326F1521A00AA1ECE /* CashCollection.swift in Sources */,
 				4A9D14C926ECD55B00C0F3E4 /* StringExtension.swift in Sources */,
 				B17FE7BE26F14D5200AA1ECE /* CowpayCallback.swift in Sources */,
 				4A9D14CD26ECD55B00C0F3E4 /* DateExtension.swift in Sources */,
