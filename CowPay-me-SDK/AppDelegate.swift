@@ -34,8 +34,10 @@ extension AppDelegate {
         guard let window = self.window else {
             return
         }
-        
-        window.rootViewController = viewController
+        DispatchQueue.main.async {
+            viewController.modalPresentationStyle = .fullScreen
+            window.rootViewController?.present(viewController, animated: false, completion: nil)
+        }
         if animated {
             UIView.transition(with: window, duration: 0.6, options: .transitionCrossDissolve, animations: nil, completion: nil)
         }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 extension DispatchQueue {
     static func background(delay: Double = 0.0, background: (() -> Void)? = nil, completion: (() -> Void)? = nil) {
         DispatchQueue.global(qos: .background).async {
@@ -16,6 +17,16 @@ extension DispatchQueue {
                     completion()
                 })
             }
+        }
+    }
+}
+
+extension UIWindow {
+    func dismiss() {
+        isHidden = true
+
+        if #available(iOS 13, *) {
+            windowScene = nil
         }
     }
 }

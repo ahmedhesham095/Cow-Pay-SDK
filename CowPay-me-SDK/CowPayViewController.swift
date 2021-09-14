@@ -81,6 +81,16 @@ class CowPayViewController: UIViewController {
         txtExpiry.isUserInteractionEnabled = true
         txtExpiry.addGestureRecognizer(tapGesture)
         selectectedCity = "0"
+        // ---------------------- Dialogue -------------------------------//
+       /*
+        let dialogueVC = CowPayDialogueViewController()
+        dialogueVC.modalPresentationStyle = .overCurrentContext
+        dialogueVC.action = {
+            print("Test !!!!!!!!!")
+        }
+        self.present(dialogueVC, animated: true, completion: nil)
+ */
+        // ---------------------------------------------------------- //
     }
 
     @IBAction func setupCreditCard(_ sender: Any) {
@@ -146,6 +156,8 @@ class CowPayViewController: UIViewController {
         
         if selectedPaymentType == .fawry {
             // navigate to fawry screen
+            let fawryVC = UIStoryboard(name: "CowPay", bundle: nil).instantiateViewController(withIdentifier: "fawryVC") as! FawryViewController
+            self.navigationController?.pushViewController(fawryVC, animated: true)
         }
         
         if selectedPaymentType == .cashCollection {
