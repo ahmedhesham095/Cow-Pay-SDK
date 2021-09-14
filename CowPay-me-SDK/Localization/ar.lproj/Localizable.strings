@@ -6,3 +6,5 @@
   Copyright © 2020 IbnSinai. All rights reserved.
 */
 "test" = "احمد";
+"copied" = "تم النسخ";
+"error" = "خطا";

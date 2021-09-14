@@ -65,9 +65,21 @@ class Interactor {
 
 
     
-    func sendFawry(){
+    func sendFawry(completion: @escaping (Fawry?,String?) -> Void){
+        
         ServiceApi.sendFawry(json:getBaseJson()){ res , err in
-            print(res)
+            if let data = res {
+                completion(Fawry(
+                    paymentGatewayReferenceId: data["payment_gateway_reference_id"] as! String,
+                    merchantReferenceId:  data["merchant_reference_id"] as! String,
+                    cowpayReferenceId:  data["cowpay_reference_id"] as! Int
+                ),nil)
+            
+            }
+            if let msg = err {
+                completion(nil,msg)
+            }
+            
         }
        
     }

@@ -40,6 +40,8 @@
 		4A9D14CE26ECD55B00C0F3E4 /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D14B826ECD55B00C0F3E4 /* TableViewExtension.swift */; };
 		4A9D14CF26ECD55B00C0F3E4 /* UITapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A9D14B926ECD55B00C0F3E4 /* UITapGestureRecognizer.swift */; };
 		7BD042EEEB546EBBAAE89686 /* Pods_CowPay_me_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F01A8A24D88DC9FDCFC64D5 /* Pods_CowPay_me_SDK.framework */; };
+		B17FE7B926F1486400AA1ECE /* Fawry.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17FE7B826F1486400AA1ECE /* Fawry.swift */; };
+		B17FE7BE26F14D5200AA1ECE /* CowpayCallback.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17FE7BD26F14D5200AA1ECE /* CowpayCallback.swift */; };
 		B18CF64626EFCB480099EBBC /* ServiceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CF64526EFCB480099EBBC /* ServiceApi.swift */; };
 		B18CF64E26EFCDB60099EBBC /* CowpaySDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CF64D26EFCDB60099EBBC /* CowpaySDK.swift */; };
 		B18CF65726EFD3FD0099EBBC /* MyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CF65626EFD3FD0099EBBC /* MyCode.swift */; };
@@ -109,6 +111,8 @@
 		4A9D14B926ECD55B00C0F3E4 /* UITapGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITapGestureRecognizer.swift; sourceTree = "<group>"; };
 		986EC6A57575E605E6F155F1 /* Pods-CowPay-me-SDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CowPay-me-SDK.debug.xcconfig"; path = "Target Support Files/Pods-CowPay-me-SDK/Pods-CowPay-me-SDK.debug.xcconfig"; sourceTree = "<group>"; };
 		9F01A8A24D88DC9FDCFC64D5 /* Pods_CowPay_me_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CowPay_me_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B17FE7B826F1486400AA1ECE /* Fawry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fawry.swift; sourceTree = "<group>"; };
+		B17FE7BD26F14D5200AA1ECE /* CowpayCallback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CowpayCallback.swift; sourceTree = "<group>"; };
 		B18CF64526EFCB480099EBBC /* ServiceApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceApi.swift; sourceTree = "<group>"; };
 		B18CF64D26EFCDB60099EBBC /* CowpaySDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CowpaySDK.swift; sourceTree = "<group>"; };
 		B18CF65626EFD3FD0099EBBC /* MyCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCode.swift; sourceTree = "<group>"; };
@@ -308,6 +312,7 @@
 			children = (
 				B18CF64D26EFCDB60099EBBC /* CowpaySDK.swift */,
 				B18CF66926EFDDC20099EBBC /* Interactor.swift */,
+				B17FE7BD26F14D5200AA1ECE /* CowpayCallback.swift */,
 			);
 			path = SDK;
 			sourceTree = "<group>";
@@ -316,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				B18CF66F26EFE0090099EBBC /* PaymentInfo.swift */,
+				B17FE7B826F1486400AA1ECE /* Fawry.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -509,10 +515,12 @@
 				B18CF64E26EFCDB60099EBBC /* CowpaySDK.swift in Sources */,
 				4A9D14CF26ECD55B00C0F3E4 /* UITapGestureRecognizer.swift in Sources */,
 				4A9D14C926ECD55B00C0F3E4 /* StringExtension.swift in Sources */,
+				B17FE7BE26F14D5200AA1ECE /* CowpayCallback.swift in Sources */,
 				4A9D14CD26ECD55B00C0F3E4 /* DateExtension.swift in Sources */,
 				B18CF66A26EFDDC20099EBBC /* Interactor.swift in Sources */,
 				4A9D149026ECD27200C0F3E4 /* LocalizationHelper.swift in Sources */,
 				4A4F03F626F108CA0028A800 /* FawryViewController.swift in Sources */,
+				B17FE7B926F1486400AA1ECE /* Fawry.swift in Sources */,
 				4A9D14C726ECD55B00C0F3E4 /* DispatchQueue .swift in Sources */,
 				4A9D14BF26ECD55B00C0F3E4 /* UITextFieldExtension.swift in Sources */,
 				B18CF67B26EFFA8E0099EBBC /* MonthYearPickerView.swift in Sources */,

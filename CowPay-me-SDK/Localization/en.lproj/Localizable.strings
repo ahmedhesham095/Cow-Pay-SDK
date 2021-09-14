@@ -6,3 +6,5 @@
   Copyright © 2020 IbnSinai. All rights reserved.
 */
 "test" = "test";
+"copied" = "Copied";
+"error" = "Error";

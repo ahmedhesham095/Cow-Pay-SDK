@@ -13,7 +13,7 @@ import Foundation
     internal static var haskey = ""
     internal static var enviroment = Enviroment.staging
     internal static var paymentInfo : PaymentInfo?
-    
+    internal static var callback : CowpayCallback?
     public static func getUrl() -> String {
         
         if(enviroment == Enviroment.live){

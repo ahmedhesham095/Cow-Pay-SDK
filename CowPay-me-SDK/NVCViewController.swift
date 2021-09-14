@@ -7,7 +7,13 @@
 
 import UIKit
 
-class NVCViewController: UIViewController {
+class NVCViewController: UIViewController,CowpayCallback {
+    
+    func successByFawry(fawry: Fawry?) {
+        print("call back")
+        print(fawry?.cowpayReferenceId)
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,13 +33,13 @@ class NVCViewController: UIViewController {
         let paymentInfo = PaymentInfo(merchantReferenceId: getNumber(), customerMerchantProfileId: "15", amount: "1", description: "description from ios", customerName: "ahmed bassiouny", customerEmail: "customer@customer.com", customerMobile: "01234567890")
         
         // launch sdk with payment info object
-        cowpaySDk.launchSDKView(paymentInfo: paymentInfo)
+        cowpaySDk.launchSDKView(paymentInfo: paymentInfo,callback: self)
       
     }
     
 
     func getNumber() -> String {
-        return String(Int.random(in: 2045 ... 4545121))
+        return String(Int.random(in: 4545121 ... 454512146846852))
     }
     /*
     // MARK: - Navigation

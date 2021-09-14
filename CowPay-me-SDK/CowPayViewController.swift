@@ -36,6 +36,9 @@ class CowPayViewController: UIViewController {
     @IBOutlet weak var lblGovernment: UILabel!
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtPhone: UITextField!
+    
+    @IBOutlet weak var btnConfirm: UIButton!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     let expiryDatePicker = MonthYearPickerView()
     var expiryDateToolBar: UIToolbar?
     var selectedPaymentType: CardType?
@@ -139,6 +142,15 @@ class CowPayViewController: UIViewController {
         self.present(actionSheetController, animated: true , completion: nil)
     }
     
+    private func startLoading(){
+        btnConfirm.isHidden = true
+        loadingIndicator.isHidden = false
+    }
+    
+    private func stopLoading(){
+        btnConfirm.isHidden = false
+        loadingIndicator.isHidden = true
+    }
     
     @IBAction func confirmPayment(_ sender: Any) {
         if selectedPaymentType == .credit {
@@ -155,9 +167,19 @@ class CowPayViewController: UIViewController {
         }
         
         if selectedPaymentType == .fawry {
-            // navigate to fawry screen
-            let fawryVC = UIStoryboard(name: "CowPay", bundle: nil).instantiateViewController(withIdentifier: "fawryVC") as! FawryViewController
-            self.navigationController?.pushViewController(fawryVC, animated: true)
+            startLoading()
+            Interactor().sendFawry(){ data , erro in
+                self.stopLoading()
+                if let msg = erro {
+                    self.AlertMessage(title: "error".localized(), userMessage: msg)
+                }
+                if let obj = data {
+                    // navigate to fawry screen
+                    let fawryVC = UIStoryboard(name: "CowPay", bundle: nil).instantiateViewController(withIdentifier: "fawryVC") as! FawryViewController
+                    fawryVC.fawry = obj
+                    self.navigationController?.pushViewController(fawryVC, animated: true)
+                }
+            }
         }
         
         if selectedPaymentType == .cashCollection {
