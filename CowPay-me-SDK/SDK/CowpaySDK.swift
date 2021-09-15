@@ -24,6 +24,13 @@ import Foundation
         }
     }
     
+    public static func getUrlForm() -> String {
+        if(enviroment == Enviroment.live){
+        return "https://cowpay.me/v2/card/form/"
+        }
+        else { return "https://staging.cowpay.me/v2/card/form/"}
+    }
+    
 }
 
 

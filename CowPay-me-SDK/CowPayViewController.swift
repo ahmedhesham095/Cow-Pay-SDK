@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import WebKit
+
 
 enum CardType {
     case credit
@@ -13,7 +15,31 @@ enum CardType {
     case cashCollection
 }
 
-class CowPayViewController: UIViewController {
+class CowPayViewController: UIViewController, WKScriptMessageHandler  {
+    
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        print("here")
+    }
+    
+    
+    
+    
+    private func launchWebView(token:String){
+        print(token)
+        
+        
+        webView.configuration.preferences.javaScriptEnabled = true
+        webView.configuration.userContentController.add(self, name: "JSBridge")
+        webView.load(URLRequest(url: URL(string:CowpaySDK.getUrlForm()+token)!))
+        webView.isHidden = false
+
+        
+       
+        
+        
+        
+    }
+    
 
     @IBOutlet weak var creditCardView: UIView!
     @IBOutlet weak var fawryView: UIView!
@@ -170,7 +196,18 @@ class CowPayViewController: UIViewController {
                     AlertMessage(title: "", userMessage: "Invalid Card Number")
                     return
                 }
-                print("Bassiouny !!! \(txtCardNumber.text ?? "") \(expiryDateString ?? "") \(CVV ?? "") \(txtCardHolderName.text ?? "")")
+                startLoading()
+                Interactor().sendCreaditCard(cardNumber: txtCardNumber.text ?? "", cardName: txtCardHolderName.text ?? "", month: "05", year: "26", cvv: txtCVV.text ?? ""){ data , erro in
+                    self.stopLoading()
+                    
+                    if let token = data {
+                        self.launchWebView(token:token)
+                    }
+                    
+                    if let msg = erro {
+                        self.AlertMessage(title: "error".localized(), userMessage: msg)
+                    }
+                }
             }
         }
         
@@ -222,6 +259,8 @@ class CowPayViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var webView: WKWebView!
+
     func selectCreditCard() {
         creditCardView.borderColor =  UIColor(hexString: "44225A")
         creditCardTitle.textColor =  UIColor(hexString: "44225A")
@@ -255,41 +294,6 @@ class CowPayViewController: UIViewController {
 //- Mark:// Validations
 extension CowPayViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        /*
-        if textField == txtCardNumber {
-            if let txt = textField.text {
-                if txt.count >= 13 && txt.isStringContainsOnlyNumbers() && txt.luhnCheck() {
-                    cardNumber = textField.text
-                } else {
-                    AlertMessage(title: "", userMessage: "Invalid Card Number")
-                }
-            } else {
-                AlertMessage(title: "", userMessage: "Please Enter a card Number")
-            }
-        }
-        
-        if textField == txtCardHolderName {
-            if textField.text?.isEmpty == true {
-                AlertMessage(title: "", userMessage: "Please Enter a card holder name")
-            } else {
-                cardHolderName = textField.text
-            }
-        }
-        
-        if textField == txtCVV {
-            if textField.text?.isEmpty == true {
-                AlertMessage(title: "", userMessage: "Please Enter an valid CVV")
-            } else {
-                CVV = textField.text
-            }
-        }
-        
-        if textField == txtEmail {
-            if textField.text?.isEmail == false {
-                AlertMessage(title: "", userMessage: "Please Enter an valid Email")
-            }
-        }
- */
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

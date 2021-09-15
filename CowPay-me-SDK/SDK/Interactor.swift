@@ -33,7 +33,7 @@ class Interactor {
                  20 : "EG-21",
                  21 : "EG-22"]
     
-    func sendCreaditCard(cardNumber:String,cardName:String,month:String,year:String,cvv:String){
+    func sendCreaditCard(cardNumber:String,cardName:String,month:String,year:String,cvv:String,completion: @escaping (String?,String?) -> Void){
         var json = getBaseJson()
         json["card_number"] = cardNumber
         json["cvv"] = cvv
@@ -42,10 +42,12 @@ class Interactor {
         json["expiry_month"] = month
      
         ServiceApi.sendCreditCard(json: json){ res , err in
-            print("res")
-            print(res?["token"])
-            print("err")
-            print(err)
+            if let data = res {
+                completion(data["token"] as! String,nil)
+            }
+            if let msg = err {
+                completion(nil,msg)
+            }
         }
     }
     
