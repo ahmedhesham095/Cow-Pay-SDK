@@ -13,10 +13,12 @@ class CowPayDialogueViewController: UIViewController {
 
     @IBOutlet weak var dialogueImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    var titleText : String?
+    var image: UIImage?
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        dialogueImage.image = image
+        titleLabel.text = titleText
     }
 
 

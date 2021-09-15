@@ -44,29 +44,29 @@ class CowPayViewController: UIViewController {
     var CVV: String?
     var expiryDateString: String?
     var selectectedCity: String?
-    var cities = [   "Cairo",
-                     "Giza", "Haram",
-                     "Downtown Alex",
-                     "Sahel",
-                     "Behira",
-                     "Dakahlia",
-                     "El Kalioubia",
-                     "Gharbia",
-                     "Kafr Alsheikh",
-                     "Monufia",
-                     "Sharqia",
-                     "Isamilia",
-                     "Suez",
-                     "Port Said",
-                     "Damietta",
-                     "Fayoum",
-                     "Bani Suif",
-                     "Asyut",
-                     "Sohag",
-                     "Menya",
-                     "Qena",
-                     "Aswan",
-                     "Luxor"]
+    var cities = [   "Cairo".localized(),
+                     "Giza".localized(), "Haram".localized(),
+                     "Downtown Alex".localized(),
+                     "Sahel".localized(),
+                     "Behira".localized(),
+                     "Dakahlia".localized(),
+                     "El Kalioubia".localized(),
+                     "Gharbia".localized(),
+                     "Kafr Alsheikh".localized(),
+                     "Monufia".localized(),
+                     "Sharqia".localized(),
+                     "Isamilia".localized(),
+                     "Suez".localized(),
+                     "Port Said".localized(),
+                     "Damietta".localized(),
+                     "Fayoum".localized(),
+                     "Bani Suif".localized(),
+                     "Asyut".localized(),
+                     "Sohag".localized(),
+                     "Menya".localized(),
+                     "Qena".localized(),
+                     "Aswan".localized(),
+                     "Luxor".localized()]
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItemTitle("Payment Method")
@@ -81,15 +81,34 @@ class CowPayViewController: UIViewController {
         txtExpiry.isUserInteractionEnabled = true
         txtExpiry.addGestureRecognizer(tapGesture)
         selectectedCity = "0"
-        // ---------------------- Dialogue -------------------------------//
-       /*
-        let dialogueVC = CowPayDialogueViewController()
-        dialogueVC.modalPresentationStyle = .overCurrentContext
-        dialogueVC.action = {
-            print("Test !!!!!!!!!")
+        if LocalizationHelper.getCurrentLanguage() == "ar" {
+            txtCardHolderName.textAlignment = .right
+            txtCardHolderName.placeholder = "اسم صاحب البطاقه"
+            txtCardNumber.textAlignment = .right
+            txtCardNumber.placeholder = "رقم البطاقه"
+            txtExpiry.textAlignment = .right
+            txtExpiry.placeholder = "تاريخ الانتهاء"
+            txtCVV.textAlignment = .right
+            txtEmail.textAlignment  = .right
+            txtEmail.placeholder = "البريد الالكتروني"
+            txtAddress.textAlignment = .right
+            txtAddress.placeholder = "العنوان"
+            txtFloor.textAlignment = .right
+            txtFloor.placeholder = "الدور"
+            txtDistrict.textAlignment = .right
+            txtDistrict.placeholder = "الحي"
+            txtApartment.textAlignment = .right
+            txtApartment.placeholder = "الشقة"
+            txtName.placeholder = "الاسم"
+            txtName.textAlignment = .right
+            txtPhone.placeholder = "رقم الهاتف"
+            txtPhone.textAlignment = .right
         }
-        self.present(dialogueVC, animated: true, completion: nil)
- */
+        
+        // ---------------------- Dialogue -------------------------------//
+//        let completion = { print("Bassiouny test")}
+//        let text = "Your order has been submitted successfully"
+//        self.showDialogue(with: true, completion: completion, text: text)
         // ---------------------------------------------------------- //
     }
 
@@ -124,7 +143,7 @@ class CowPayViewController: UIViewController {
     }
     
     @IBAction func selectGovernmentAction(_ sender: Any) {
-        let actionSheetController: UIAlertController = UIAlertController(title: "Select City", message: nil, preferredStyle: .actionSheet)
+        let actionSheetController: UIAlertController = UIAlertController(title: "Select City".localized(), message: nil, preferredStyle: .actionSheet)
         self.cities.forEach({ (city) in
             let firstAction: UIAlertAction = UIAlertAction(title: city , style: .default) { action -> Void in
                 self.lblGovernment.text = city
@@ -132,7 +151,7 @@ class CowPayViewController: UIViewController {
             }
             actionSheetController.addAction(firstAction)
         })
-        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: .cancel) { action -> Void in
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel".localized(), style: .cancel) { action -> Void in
         }
         actionSheetController.addAction(cancelAction)
         actionSheetController.popoverPresentationController?.sourceView = self.view
@@ -358,3 +377,18 @@ extension CowPayViewController {
             }
         }
     }
+
+extension CowPayViewController {
+    func showDialogue(with Success: Bool , completion: @escaping () -> Void , text: String) {
+        let dialogueVC = CowPayDialogueViewController()
+        dialogueVC.modalPresentationStyle = .overCurrentContext
+        if Success {
+            dialogueVC.image = UIImage(named: "ic_success")
+        } else {
+            dialogueVC.image = UIImage(named: "ic_warning")
+        }
+        dialogueVC.titleText = text
+        dialogueVC.action = completion
+        self.present(dialogueVC, animated: true, completion: nil)
+    }
+}

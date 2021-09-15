@@ -11,8 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CowPayDialogueViewController" customModule="CowPay_me_SDK" customModuleProvider="target">
             <connections>
-                <outlet property="dialogueImage" destination="B8M-Qg-uaQ" id="lUd-ac-kcd"/>
-                <outlet property="titleLabel" destination="BAF-1w-IBK" id="Skf-pq-GHr"/>
+                <outlet property="dialogueImage" destination="B8M-Qg-uaQ" id="mwF-Sv-ZIM"/>
+                <outlet property="titleLabel" destination="BAF-1w-IBK" id="OQt-ka-rNx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

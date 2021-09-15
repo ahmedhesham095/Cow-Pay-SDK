@@ -41,8 +41,8 @@ extension LocalizationHelper {
 // MARK: - reset
 
 extension LocalizationHelper {
-    class func reset(_ complition: (() -> Void)? = nil) {
-        (UIApplication.shared.delegate as? AppDelegate)?.resetRootWithCowPayView()
+    class func reset(_ complition: (() -> Void)? = nil , window: UIWindow) {
+        (UIApplication.shared.delegate as? AppDelegate)?.resetRootWithCowPayView(window: window)
         complition?()
     }
 

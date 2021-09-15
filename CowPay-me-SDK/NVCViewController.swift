@@ -21,13 +21,15 @@ class NVCViewController: UIViewController {
         // merchant code
         // haskey
         // enviroment
-        cowpaySDk.initSDK(token: token,merchantCode: "dev1212",haskey: "dev1212",enviroment: Enviroment.staging,with: "en")
+        cowpaySDk.initSDK(token: token,merchantCode: "dev1212",haskey: "dev1212",enviroment: Enviroment.staging,with: "ar")
         
         // create payment info object
         let paymentInfo = PaymentInfo(merchantReferenceId: getNumber(), customerMerchantProfileId: "15", amount: "1", description: "description from ios", customerName: "ahmed bassiouny", customerEmail: "customer@customer.com", customerMobile: "01234567890")
         
         // launch sdk with payment info object
-        cowpaySDk.launchSDKView(paymentInfo: paymentInfo)
+        if let app = UIApplication.shared.delegate as? AppDelegate, let window = app.window {
+            cowpaySDk.launchSDKView(paymentInfo: paymentInfo, window: window)
+        }
       
     }
     

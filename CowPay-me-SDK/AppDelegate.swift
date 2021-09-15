@@ -23,20 +23,20 @@ extension AppDelegate {
         return UIApplication.shared.delegate as? AppDelegate
     }
     
-    func resetRootWithCowPayView(animated: Bool = true) {
+    func resetRootWithCowPayView(animated: Bool = true , window: UIWindow) {
         let cowPayStoryBoard = UIStoryboard(name: "CowPay", bundle: nil)
-        let cowPayNavigation = cowPayStoryBoard.instantiateViewController(withIdentifier: "paymentView") as! UINavigationController // HomeNC
-        self.setRoot(withController: cowPayNavigation, animated: animated)
+        let cowPayNavigation = cowPayStoryBoard.instantiateViewController(withIdentifier: "paymentView") as! UINavigationController 
+        self.setRoot(withController: cowPayNavigation, animated: animated, window: window)
     }
     
     func setRoot(withController viewController: UIViewController,
-                 animated: Bool = true) {
-        guard let window = self.window else {
-            return
-        }
+                 animated: Bool = true , window: UIWindow) {
+//        guard let window = window else {
+//            return
+//        }
         DispatchQueue.main.async {
             viewController.modalPresentationStyle = .fullScreen
-            window.rootViewController?.present(viewController, animated: false, completion: nil)
+            window.rootViewController?.present(viewController, animated: true, completion: nil)
         }
         if animated {
             UIView.transition(with: window, duration: 0.6, options: .transitionCrossDissolve, animations: nil, completion: nil)

@@ -21,21 +21,21 @@ class CowPayInitializer {
         CowpaySDK.enviroment = enviroment
     }
     
-    public func launchSDKView(paymentInfo:PaymentInfo) {
+    public func launchSDKView(paymentInfo:PaymentInfo , window: UIWindow) {
         
         if(CowpaySDK.token.isEmpty || CowpaySDK.merchantCode.isEmpty || CowpaySDK.haskey.isEmpty){
             print("Can't Load SDK , should call initSDK")
         }else {
             CowpaySDK.paymentInfo = paymentInfo
-        self.presentPayView(lang: lang)
+            self.presentPayView(lang: lang , window: window)
             Interactor().sendCreaditCard(cardNumber: "5123450000000008",cardName: "ahmed",month: "05",year: "26",cvv: "123")
         }
     }
     
     
-    private func presentPayView(animated: Bool = true , lang: String) {
+    private func presentPayView(animated: Bool = true , lang: String , window: UIWindow) {
         LocalizationHelper.setCurrentLang(lang: lang)
-        LocalizationHelper.reset()
+        LocalizationHelper.reset(window: window)
     }
     
     
