@@ -33,7 +33,7 @@ class Interactor {
                  20 : "EG-21",
                  21 : "EG-22"]
     
-    func sendCreaditCard(cardNumber:String,cardName:String,month:String,year:String,cvv:String){
+    func sendCreaditCard(cardNumber:String,cardName:String,month:String,year:String,cvv:String,completion: @escaping (String?,String?) -> Void){
         var json = getBaseJson()
         json["card_number"] = cardNumber
         json["cvv"] = cvv
@@ -42,32 +42,59 @@ class Interactor {
         json["expiry_month"] = month
      
         ServiceApi.sendCreditCard(json: json){ res , err in
-            print("res")
-            print(res?["token"])
-            print("err")
-            print(err)
+            if let data = res {
+                completion(data["token"] as! String,nil)
+            }
+            if let msg = err {
+                completion(nil,msg)
+            }
         }
     }
     
-    func sendCashCollectino(address:String,floor:String,district:String,apartment:String,index:Int){
+    func sendCashCollection(name:String,email:String,phone:String,address:String,floor:String,district:String,apartment:String,index:Int,completion: @escaping (CashCollection?,String?) -> Void){
         var json = getBaseJson()
         json["address"] = address
         json["floor"] = floor
         json["district"] = district
         json["apartment"] = apartment
         json["expiry_month"] = cityCodes[index]
+        json["customer_name"] = name
+        json["customer_email"] = email
+        json["customer_mobile"] = phone
      
         ServiceApi.sendCashCollectino(json: json){ res , err in
+            if let data = res {
+                completion(CashCollection(
+                    paymentGatewayReferenceId: data["payment_gateway_reference_id"] as! String,
+                    merchantReferenceId:  data["merchant_reference_id"] as! String,
+                    cowpayReferenceId:  data["cowpay_reference_id"] as! Int
+                ),nil)
             
+            }
+            if let msg = err {
+                completion(nil,msg)
+            }
         }
     }
 
 
 
     
-    func sendFawry(){
+    func sendFawry(completion: @escaping (Fawry?,String?) -> Void){
+        
         ServiceApi.sendFawry(json:getBaseJson()){ res , err in
-            print(res)
+            if let data = res {
+                completion(Fawry(
+                    paymentGatewayReferenceId: data["payment_gateway_reference_id"] as! String,
+                    merchantReferenceId:  data["merchant_reference_id"] as! String,
+                    cowpayReferenceId:  data["cowpay_reference_id"] as! Int
+                ),nil)
+            
+            }
+            if let msg = err {
+                completion(nil,msg)
+            }
+            
         }
        
     }

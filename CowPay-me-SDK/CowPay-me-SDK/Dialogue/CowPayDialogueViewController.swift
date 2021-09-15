@@ -24,7 +24,9 @@ class CowPayDialogueViewController: UIViewController {
 
     @IBAction func okAction(_ sender: Any) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
-            self?.action?()
+            self?.dismiss(animated: true){
+                self?.action?()
+            }
         }
     }
     

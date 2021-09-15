@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import WebKit
+
 
 enum CardType {
     case credit
@@ -13,7 +15,31 @@ enum CardType {
     case cashCollection
 }
 
-class CowPayViewController: UIViewController {
+class CowPayViewController: UIViewController, WKScriptMessageHandler  {
+    
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        print("here")
+    }
+    
+    
+    
+    
+    private func launchWebView(token:String){
+        print(token)
+        
+        
+        webView.configuration.preferences.javaScriptEnabled = true
+        webView.configuration.userContentController.add(self, name: "JSBridge")
+        webView.load(URLRequest(url: URL(string:CowpaySDK.getUrlForm()+token)!))
+        webView.isHidden = false
+
+        
+       
+        
+        
+        
+    }
+    
 
     @IBOutlet weak var creditCardView: UIView!
     @IBOutlet weak var fawryView: UIView!
@@ -36,6 +62,9 @@ class CowPayViewController: UIViewController {
     @IBOutlet weak var lblGovernment: UILabel!
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtPhone: UITextField!
+    
+    @IBOutlet weak var btnConfirm: UIButton!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     let expiryDatePicker = MonthYearPickerView()
     var expiryDateToolBar: UIToolbar?
     var selectedPaymentType: CardType?
@@ -110,6 +139,14 @@ class CowPayViewController: UIViewController {
 //        let text = "Your order has been submitted successfully"
 //        self.showDialogue(with: true, completion: completion, text: text)
         // ---------------------------------------------------------- //
+        
+        setUserInfo()
+    }
+    
+    private func setUserInfo(){
+        txtEmail.text = CowpaySDK.paymentInfo?.customerEmail
+        txtName.text = CowpaySDK.paymentInfo?.customerName
+        txtPhone.text = CowpaySDK.paymentInfo?.customerMobile
     }
 
     @IBAction func setupCreditCard(_ sender: Any) {
@@ -158,6 +195,15 @@ class CowPayViewController: UIViewController {
         self.present(actionSheetController, animated: true , completion: nil)
     }
     
+    private func startLoading(){
+        btnConfirm.isHidden = true
+        loadingIndicator.isHidden = false
+    }
+    
+    private func stopLoading(){
+        btnConfirm.isHidden = false
+        loadingIndicator.isHidden = true
+    }
     
     @IBAction func confirmPayment(_ sender: Any) {
         if selectedPaymentType == .credit {
@@ -169,20 +215,59 @@ class CowPayViewController: UIViewController {
                     AlertMessage(title: "", userMessage: "Invalid Card Number")
                     return
                 }
-                print("Bassiouny !!! \(txtCardNumber.text ?? "") \(expiryDateString ?? "") \(CVV ?? "") \(txtCardHolderName.text ?? "")")
+                startLoading()
+                Interactor().sendCreaditCard(cardNumber: txtCardNumber.text ?? "", cardName: txtCardHolderName.text ?? "", month: "05", year: "26", cvv: txtCVV.text ?? ""){ data , erro in
+                    self.stopLoading()
+                    
+                    if let token = data {
+                        self.launchWebView(token:token)
+                    }
+                    
+                    if let msg = erro {
+                        self.AlertMessage(title: "error".localized(), userMessage: msg)
+                    }
+                }
             }
         }
         
         if selectedPaymentType == .fawry {
-            // navigate to fawry screen
-            let fawryVC = UIStoryboard(name: "CowPay", bundle: nil).instantiateViewController(withIdentifier: "fawryVC") as! FawryViewController
-            self.navigationController?.pushViewController(fawryVC, animated: true)
+            startLoading()
+            Interactor().sendFawry(){ data , erro in
+                self.stopLoading()
+                if let msg = erro {
+                    self.AlertMessage(title: "error".localized(), userMessage: msg)
+                }
+                if let obj = data {
+                    // navigate to fawry screen
+                    let fawryVC = UIStoryboard(name: "CowPay", bundle: nil).instantiateViewController(withIdentifier: "fawryVC") as! FawryViewController
+                    fawryVC.fawry = obj
+                    self.navigationController?.pushViewController(fawryVC, animated: true)
+                }
+            }
         }
         
         if selectedPaymentType == .cashCollection {
             
             if txtEmail.text?.isEmpty == false , txtAddress.text?.isEmpty == false , txtFloor.text?.isEmpty == false , txtDistrict.text?.isEmpty == false , txtApartment.text?.isEmpty == false , selectectedCity != nil , txtName.text?.isEmpty == false , txtPhone.text?.isEmpty == false {
-                print("Bassiouny !!! \(txtEmail.text ?? "")  \(txtAddress.text ?? "") \(txtFloor.text ?? "") \(txtDistrict.text ?? "")  \(txtApartment.text ?? "") \(selectectedCity ?? "")")
+
+                startLoading()
+                Interactor().sendCashCollection(name: txtName.text!,email: txtEmail.text!,phone: txtPhone.text!,address: txtAddress.text!,floor: txtFloor.text!,district: txtDistrict.text!,apartment: txtApartment.text!,index: Int(selectectedCity ?? "0") ?? 0){ data , erro in
+                    self.stopLoading()
+                    if let msg = erro {
+                        self.AlertMessage(title: "error".localized(), userMessage: msg)
+                  
+                    }
+                    
+                    if let obj = data {
+                        let dialogueVC = CowPayDialogueViewController()
+                        dialogueVC.modalPresentationStyle = .overCurrentContext
+                        dialogueVC.action = {
+                            CowpaySDK.callback?.successByCashCollection(cashCollection: obj)
+                            self.navigationController?.dismiss(animated: true, completion: nil)
+                        }
+                        self.present(dialogueVC, animated: true, completion: nil)
+                    }
+                }
             } else {
                 if txtEmail.text?.isEmail == false {
                     AlertMessage(title: "", userMessage: "Please Fill a valid Email")
@@ -193,6 +278,8 @@ class CowPayViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var webView: WKWebView!
+
     func selectCreditCard() {
         creditCardView.borderColor =  UIColor(hexString: "44225A")
         creditCardTitle.textColor =  UIColor(hexString: "44225A")
@@ -226,41 +313,6 @@ class CowPayViewController: UIViewController {
 //- Mark:// Validations
 extension CowPayViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        /*
-        if textField == txtCardNumber {
-            if let txt = textField.text {
-                if txt.count >= 13 && txt.isStringContainsOnlyNumbers() && txt.luhnCheck() {
-                    cardNumber = textField.text
-                } else {
-                    AlertMessage(title: "", userMessage: "Invalid Card Number")
-                }
-            } else {
-                AlertMessage(title: "", userMessage: "Please Enter a card Number")
-            }
-        }
-        
-        if textField == txtCardHolderName {
-            if textField.text?.isEmpty == true {
-                AlertMessage(title: "", userMessage: "Please Enter a card holder name")
-            } else {
-                cardHolderName = textField.text
-            }
-        }
-        
-        if textField == txtCVV {
-            if textField.text?.isEmpty == true {
-                AlertMessage(title: "", userMessage: "Please Enter an valid CVV")
-            } else {
-                CVV = textField.text
-            }
-        }
-        
-        if textField == txtEmail {
-            if textField.text?.isEmail == false {
-                AlertMessage(title: "", userMessage: "Please Enter an valid Email")
-            }
-        }
- */
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qIg-II-hqL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qIg-II-hqL">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -483,6 +483,17 @@
                                     <constraint firstAttribute="height" constant="160" id="hxw-2g-KyG"/>
                                 </constraints>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Ffd-UO-Zsd">
+                                <rect key="frame" x="197" y="822" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <wkWebView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CjS-zt-bjW">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EEl-3k-0B4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -494,23 +505,30 @@
                             <constraint firstItem="h1s-Ib-9tC" firstAttribute="leading" secondItem="I3M-cN-Yjx" secondAttribute="leading" constant="10" id="FVh-PN-QN3"/>
                             <constraint firstItem="Zzw-4b-FVx" firstAttribute="top" secondItem="F44-yN-qk2" secondAttribute="bottom" constant="10" id="GZ0-u2-ewj"/>
                             <constraint firstItem="EEl-3k-0B4" firstAttribute="trailing" secondItem="SCG-Ok-GHq" secondAttribute="trailing" constant="10" id="Lyi-JA-ip8"/>
+                            <constraint firstItem="CjS-zt-bjW" firstAttribute="top" secondItem="EEl-3k-0B4" secondAttribute="top" id="PKN-Bp-pvu"/>
                             <constraint firstItem="h1s-Ib-9tC" firstAttribute="top" secondItem="nlP-6O-hHi" secondAttribute="bottom" constant="20" id="Rk2-hh-yGc"/>
                             <constraint firstItem="SCG-Ok-GHq" firstAttribute="top" secondItem="nlP-6O-hHi" secondAttribute="bottom" constant="20" id="TKQ-mG-n4a"/>
                             <constraint firstItem="b4U-XT-fK4" firstAttribute="centerY" secondItem="I3M-cN-Yjx" secondAttribute="centerY" id="axQ-47-YCg"/>
                             <constraint firstItem="b4U-XT-fK4" firstAttribute="leading" secondItem="I3M-cN-Yjx" secondAttribute="leading" constant="10" id="cr1-hs-4kk"/>
                             <constraint firstItem="nlP-6O-hHi" firstAttribute="top" secondItem="EEl-3k-0B4" secondAttribute="top" constant="10" id="d5W-dA-MOe"/>
                             <constraint firstAttribute="trailing" secondItem="h1s-Ib-9tC" secondAttribute="trailing" constant="10" id="dHc-lD-NFG"/>
+                            <constraint firstItem="Ffd-UO-Zsd" firstAttribute="bottom" secondItem="Zzw-4b-FVx" secondAttribute="bottom" id="e79-2p-hmG"/>
                             <constraint firstItem="EEl-3k-0B4" firstAttribute="trailing" secondItem="Zzw-4b-FVx" secondAttribute="trailing" constant="30" id="eX6-6J-lbO"/>
                             <constraint firstItem="Zzw-4b-FVx" firstAttribute="leading" secondItem="EEl-3k-0B4" secondAttribute="leading" constant="30" id="f2u-ec-GfQ"/>
+                            <constraint firstItem="CjS-zt-bjW" firstAttribute="leading" secondItem="EEl-3k-0B4" secondAttribute="leading" id="gNT-j8-MKw"/>
                             <constraint firstAttribute="trailing" secondItem="b4U-XT-fK4" secondAttribute="trailing" constant="10" id="idf-WQ-Tyo"/>
+                            <constraint firstItem="Ffd-UO-Zsd" firstAttribute="centerX" secondItem="I3M-cN-Yjx" secondAttribute="centerX" id="jpJ-F1-kNG"/>
+                            <constraint firstItem="EEl-3k-0B4" firstAttribute="bottom" secondItem="CjS-zt-bjW" secondAttribute="bottom" id="mN0-9C-j0q"/>
                             <constraint firstItem="EEl-3k-0B4" firstAttribute="trailing" secondItem="F44-yN-qk2" secondAttribute="trailing" constant="10" id="nVJ-Pa-Zox"/>
                             <constraint firstItem="nlP-6O-hHi" firstAttribute="leading" secondItem="EEl-3k-0B4" secondAttribute="leading" constant="10" id="uR0-lN-TZ3"/>
+                            <constraint firstAttribute="trailing" secondItem="CjS-zt-bjW" secondAttribute="trailing" id="uYP-2o-RMS"/>
                             <constraint firstItem="F44-yN-qk2" firstAttribute="leading" secondItem="EEl-3k-0B4" secondAttribute="leading" constant="10" id="vbk-ox-rmW"/>
                             <constraint firstItem="EEl-3k-0B4" firstAttribute="bottom" secondItem="Zzw-4b-FVx" secondAttribute="bottom" constant="20" id="x8K-xi-iaV"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1B0-lV-aOv"/>
                     <connections>
+                        <outlet property="btnConfirm" destination="Zzw-4b-FVx" id="54f-To-o8H"/>
                         <outlet property="cashCollection" destination="OR1-3M-hlS" id="7YQ-jF-euZ"/>
                         <outlet property="cashCollectionStack" destination="tav-Oy-QRg" id="MkN-y2-17y"/>
                         <outlet property="cashCollectionTitle" destination="tO7-MX-zTk" id="ecD-OE-ZFD"/>
@@ -521,6 +539,7 @@
                         <outlet property="fawryTitle" destination="IR8-HA-4as" id="Ixg-K3-YQu"/>
                         <outlet property="fawryView" destination="8N8-fX-yTJ" id="51x-V7-sPc"/>
                         <outlet property="lblGovernment" destination="y3s-Xi-gOS" id="j3h-WZ-0P5"/>
+                        <outlet property="loadingIndicator" destination="Ffd-UO-Zsd" id="GBR-ti-V6u"/>
                         <outlet property="txtAddress" destination="1ni-xF-jft" id="pgd-ow-Spp"/>
                         <outlet property="txtApartment" destination="jgD-L5-YXA" id="aGZ-8G-wY4"/>
                         <outlet property="txtCVV" destination="mYv-9Q-8IB" id="rIC-lU-pcI"/>
@@ -532,11 +551,12 @@
                         <outlet property="txtFloor" destination="bM4-EH-WNK" id="Wy7-sO-HEb"/>
                         <outlet property="txtName" destination="6Xf-FG-qth" id="x7s-MX-C1K"/>
                         <outlet property="txtPhone" destination="aVF-dL-suK" id="XAT-IS-mWy"/>
+                        <outlet property="webView" destination="CjS-zt-bjW" id="aKk-2D-scF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oGy-vh-w1Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="803" y="96"/>
+            <point key="canvasLocation" x="802.89855072463774" y="95.758928571428569"/>
         </scene>
         <!--Fawry View Controller-->
         <scene sceneID="dpt-ES-gkm">
