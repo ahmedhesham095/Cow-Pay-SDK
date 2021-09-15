@@ -18,25 +18,20 @@ enum CardType {
 class CowPayViewController: UIViewController, WKScriptMessageHandler  {
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        print("here")
+        print("dasdasda")
     }
-    
-    
-    
+ 
     
     private func launchWebView(token:String){
         print(token)
         
-        
-        webView.configuration.preferences.javaScriptEnabled = true
-        webView.configuration.userContentController.add(self, name: "JSBridge")
-        webView.load(URLRequest(url: URL(string:CowpaySDK.getUrlForm()+token)!))
         webView.isHidden = false
-
+        webView.load(URLRequest(url: URL(string:CowpaySDK.getUrlForm()+token)!))
+        let contentController = WKUserContentController()
         
-       
+        webView.configuration.userContentController = contentController
         
-        
+        webView.configuration.userContentController.add(self, name: "JSBridge")
         
     }
     
