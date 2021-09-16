@@ -8,8 +8,9 @@
 import UIKit
 
 class NVCViewController: UIViewController, CowpayCallback {
+    
     func successByCard(card: Card?) {
-        
+        print(card?.cowpayReferenceId)
     }
     
     func error() {
@@ -17,12 +18,12 @@ class NVCViewController: UIViewController, CowpayCallback {
     }
     
     func successByCashCollection(cashCollection: CashCollection?) {
-    
+        print(cashCollection?.cowpayReferenceId)
     }
     
     
     func successByFawry(fawry: Fawry?) {
-     
+        print(fawry?.cowpayReferenceId)
     }
     
 

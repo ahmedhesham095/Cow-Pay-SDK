@@ -26,12 +26,16 @@ extension CowPayViewController : WKScriptMessageHandler{
                     if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? Dictionary<String,Any>
                     {
                         if(jsonArray["payment_status"] as! String == "PAID"){
-                            showDialogue(with: true, text: "Success"){
+                            showDialogue(with: true, text: "order_success".localized()){
                                 CowpaySDK.callback?.successByCard(card: Card(paymentGatewayReferenceId: jsonArray["payment_gateway_reference_id"] as! String, cowpayReferenceId: jsonArray["cowpay_reference_id"] as! String))
                                 self.navigationController?.dismiss(animated: true, completion: nil)
                             }
                         }else {
+                            showDialogue(with: false, text: "order_failed".localized()){
+                                
                             CowpaySDK.callback?.error()
+                            self.navigationController?.dismiss(animated: true, completion: nil)
+                            }
                         }
                     } else {
                         CowpaySDK.callback?.error()
@@ -291,18 +295,20 @@ class CowPayViewController: UIViewController   {
                 interactor.sendCashCollection(name: txtName.text!,email: txtEmail.text!,phone: txtPhone.text!,address: txtAddress.text!,floor: txtFloor.text!,district: txtDistrict.text!,apartment: txtApartment.text!,index: Int(selectectedCity ?? "0") ?? 0){ data , erro in
                     self.stopLoading()
                     if let msg = erro {
-                        self.AlertMessage(title: "error".localized(), userMessage: msg)
+                        
+                        self.showDialogue(with: false, text: msg){
+                            
+                        CowpaySDK.callback?.error()
+                        self.navigationController?.dismiss(animated: true, completion: nil)
+                        }
                   
                     }
                     
                     if let obj = data {
-                        let dialogueVC = CowPayDialogueViewController()
-                        dialogueVC.modalPresentationStyle = .overCurrentContext
-                        dialogueVC.action = {
+                        self.showDialogue(with: true, text: "order_success".localized()){
                             CowpaySDK.callback?.successByCashCollection(cashCollection: obj)
                             self.navigationController?.dismiss(animated: true, completion: nil)
                         }
-                        self.present(dialogueVC, animated: true, completion: nil)
                     }
                 }
             } else {
