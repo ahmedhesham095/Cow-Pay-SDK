@@ -51,6 +51,7 @@
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                     <real key="value" value="20"/>
                                 </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="string" keyPath="localizationKey" value="ok"/>
                             </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="okAction:" destination="-1" eventType="touchUpInside" id="d2v-vP-jb8"/>
@@ -87,7 +88,7 @@
         </view>
     </objects>
     <resources>
-        <image name="ic_success" width="492" height="492"/>
+        <image name="ic_success" width="900" height="600"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

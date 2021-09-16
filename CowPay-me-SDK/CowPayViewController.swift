@@ -95,6 +95,7 @@ class CowPayViewController: UIViewController   {
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtPhone: UITextField!
     
+    @IBOutlet weak var creditCardImage: UIImageView!
     @IBOutlet weak var btnConfirm: UIButton!
     @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     let expiryDatePicker = MonthYearPickerView()
@@ -130,7 +131,7 @@ class CowPayViewController: UIViewController   {
                      "Luxor".localized()]
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItemTitle("Payment Method")
+        self.navigationItemTitle("Payment Method".localized())
         self.navigationController?.navigationBar.barTintColor = UIColor(hexString: "44225A")
         setupCreditCard(self)
         selectedPaymentType = .credit
@@ -190,7 +191,12 @@ class CowPayViewController: UIViewController   {
         txtName.text = CowpaySDK.paymentInfo?.customerName
         txtPhone.text = CowpaySDK.paymentInfo?.customerMobile
     }
-
+    
+    
+    @IBAction func backAction(_ sender: Any) {
+        self.navigationController?.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func setupCreditCard(_ sender: Any) {
         selectCreditCard()
         deselectFawry()
@@ -252,11 +258,11 @@ class CowPayViewController: UIViewController   {
     
         if selectedPaymentType == .credit {
             if expiryDateString == nil || txtCardNumber.text?.isEmpty == true || txtCVV.text?.isEmpty == true || txtCardHolderName.text?.isEmpty == true {
-                AlertMessage(title: "", userMessage: "Please fill all the fields")
+                self.showDialogue(with: false, text: "Please fill all the fields".localized(), completion: {})
             } else {
                 //- Credit Card data
                 if txtCardNumber.text?.luhnCheck() == false || txtCardNumber.text?.isStringContainsOnlyNumbers() == false || txtCardNumber.text?.count ?? 0 < 12 {
-                    AlertMessage(title: "", userMessage: "Invalid Card Number")
+                    self.showDialogue(with: false, text: "Invalid Card Number".localized(), completion: {})
                     return
                 }
                 startLoading()
@@ -269,7 +275,8 @@ class CowPayViewController: UIViewController   {
                     }
                     
                     if let msg = erro {
-                        self.AlertMessage(title: "error".localized(), userMessage: msg)
+                        self.showDialogue(with: false, text: msg, completion: {})
+
                     }
                 }
             }
@@ -280,7 +287,7 @@ class CowPayViewController: UIViewController   {
             interactor.sendFawry(){ data , erro in
                 self.stopLoading()
                 if let msg = erro {
-                    self.AlertMessage(title: "error".localized(), userMessage: msg)
+                    self.showDialogue(with: false, text: msg, completion: {})
                 }
                 if let obj = data {
                     // navigate to fawry screen
@@ -299,8 +306,8 @@ class CowPayViewController: UIViewController   {
                 interactor.sendCashCollection(name: txtName.text!,email: txtEmail.text!,phone: txtPhone.text!,address: txtAddress.text!,floor: txtFloor.text!,district: txtDistrict.text!,apartment: txtApartment.text!,index: Int(selectectedCity ?? "0") ?? 0){ data , erro in
                     self.stopLoading()
                     if let msg = erro {
-                        self.AlertMessage(title: "error".localized(), userMessage: msg)
-                  
+                        self.showDialogue(with: false, text: msg, completion: {})
+
                     }
                     
                     if let obj = data {
@@ -315,10 +322,11 @@ class CowPayViewController: UIViewController   {
                 }
             } else {
                 if txtEmail.text?.isEmail == false {
-                    AlertMessage(title: "", userMessage: "Please Fill a valid Email")
+                    self.showDialogue(with: false, text: "Please Fill a valid Email".localized(), completion: {})
+
                     return
                 }
-              AlertMessage(title: "", userMessage: "Please Fill all the fields")
+                self.showDialogue(with: false, text: "Please fill all the fields".localized(), completion: {})
             }
         }
     }
@@ -353,6 +361,24 @@ class CowPayViewController: UIViewController   {
     func deselectFawry() {
         fawryView.borderColor = UIColor(hexString: "f6f6f6")
         fawryTitle.textColor =  UIColor.black
+    }
+    
+    @IBAction func cardNumberTextUpdated(_ sender: UITextField) {
+        guard let textCount = sender.text?.count else { return  }
+        if textCount >= 13 {
+            self.checkCardType(with: sender.text ?? "")
+        }
+        if textCount >= 6 {
+            let numberOfZeros = 13 - textCount
+            if numberOfZeros > 0 {
+                let zerosText = String(repeating: "0", count: numberOfZeros)
+                let cardNumber = "\(sender.text ?? "")\(zerosText)"
+                self.checkCardType(with: cardNumber)
+            }
+        }
+        if textCount < 6 {
+            creditCardImage.image = nil
+        }
     }
 }
 //- Mark:// Validations
@@ -492,5 +518,19 @@ extension CowPayViewController {
         dialogueVC.titleText = text
         dialogueVC.action = completion
         self.present(dialogueVC, animated: true, completion: nil)
+    }
+    
+    func checkCardType(with cardNumber: String) {
+        let cardValidationType = CreditCardTypeChecker.type(for: cardNumber)
+        if let cardType = cardValidationType  {
+            if cardType == .visa {
+                creditCardImage.image = #imageLiteral(resourceName: "ic_visa")
+            } else if cardType == .mastercard {
+                creditCardImage.image = #imageLiteral(resourceName: "ic_master")
+            }
+            else {
+                creditCardImage.image = UIImage(named: "")
+            }
+        }
     }
 }
