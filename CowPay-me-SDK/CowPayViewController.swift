@@ -182,6 +182,7 @@ class CowPayViewController: UIViewController   {
         // ---------------------------------------------------------- //
         
         setUserInfo()
+        view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
     }
     
     private func setUserInfo(){
