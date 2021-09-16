@@ -138,6 +138,13 @@ class CowPayViewController: UIViewController   {
         txtCardNumber.delegate = self
         txtCVV.delegate = self
         txtExpiry.delegate = self
+        txtPhone.delegate = self
+        txtName.delegate = self
+        txtEmail.delegate = self
+        txtAddress.delegate = self
+        txtFloor.delegate = self
+        txtDistrict.delegate = self
+        txtApartment.delegate = self
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.expiryDateLabelTapped))
         txtExpiry.isUserInteractionEnabled = true
         txtExpiry.addGestureRecognizer(tapGesture)
