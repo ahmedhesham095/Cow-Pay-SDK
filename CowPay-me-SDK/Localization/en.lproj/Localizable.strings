@@ -34,3 +34,4 @@
 "test" = "test";
 "copied" = "Copied";
 "error" = "Error";
+"success" = "Success";

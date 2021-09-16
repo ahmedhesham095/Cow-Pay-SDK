@@ -10,6 +10,8 @@ import CommonCrypto
 
 class Interactor {
     
+    var card = Card(cowpayReferenceId: 0)
+    
     private var cityCodes = [ 0 : "EG-01",
                  1 : "EG-01",
                  2 : "EG-02",
@@ -42,8 +44,10 @@ class Interactor {
         json["expiry_month"] = month
      
         ServiceApi.sendCreditCard(json: json){ res , err in
+            print(res)
             if let data = res {
                 completion(data["token"] as! String,nil)
+                self.card.cowpayReferenceId = data["cowpay_reference_id"] as! Int
             }
             if let msg = err {
                 completion(nil,msg)

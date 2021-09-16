@@ -421,13 +421,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="394" height="46.5"/>
                                         <color key="textColor" red="0.2666666667" green="0.1333333333" blue="0.35294117650000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Card Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8HR-Fe-ihF">
                                         <rect key="frame" x="0.0" y="56.5" width="394" height="47"/>
                                         <color key="textColor" red="0.2666666667" green="0.1333333333" blue="0.35294117650000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="LQI-ZU-elP">
                                         <rect key="frame" x="0.0" y="113.5" width="394" height="46.5"/>
@@ -445,7 +445,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="189.5" height="46.5"/>
                                                         <color key="textColor" red="0.2666666667" green="0.1333333333" blue="0.35294117650000001" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                                                     </textField>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_cvv" translatesAutoresizingMaskIntoConstraints="NO" id="lcX-wN-tCI">
                                                         <rect key="frame" x="159.5" y="10.5" width="20" height="25"/>

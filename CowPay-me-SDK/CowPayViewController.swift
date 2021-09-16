@@ -15,23 +15,50 @@ enum CardType {
     case cashCollection
 }
 
-class CowPayViewController: UIViewController, WKScriptMessageHandler  {
+extension CowPayViewController :WKNavigationDelegate{
     
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        print("dasdasda")
+  
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        var result = [String:String]()
+        print("bassiouny" )
+        print( webView.url?.query)
+        if let query = webView.url?.query{
+        let arr = query.components(separatedBy: "&")
+            for item in arr {
+                let content = item.components(separatedBy: "=")
+                let s = content[0]
+                result[s] = content[1]
+            }
+            let ticket = result["ticketNumber"] ?? ""
+            if(result["result"]?.uppercased() == "SUCCESS" || !(ticket.isEmpty)){
+                showDialogue(with: true, text: "success".localized()){
+                    CowpaySDK.callback?.successByCard(card: self.interactor.card)
+                    self.navigationController?.dismiss(animated: true, completion: nil)
+                }
+             
+            }else {
+                CowpaySDK.callback?.error()
+            }
+        }
     }
- 
+    
+    
+}
+
+
+class CowPayViewController: UIViewController   {
+    
+    let interactor = Interactor()
+   
     
     private func launchWebView(token:String){
-        print(token)
         
         webView.isHidden = false
+      
+
         webView.load(URLRequest(url: URL(string:CowpaySDK.getUrlForm()+token)!))
-        let contentController = WKUserContentController()
+        webView.navigationDelegate = self
         
-        webView.configuration.userContentController = contentController
-        
-        webView.configuration.userContentController.add(self, name: "JSBridge")
         
     }
     
@@ -201,6 +228,8 @@ class CowPayViewController: UIViewController, WKScriptMessageHandler  {
     }
     
     @IBAction func confirmPayment(_ sender: Any) {
+        let date = expiryDateString?.components(separatedBy: "/")
+    
         if selectedPaymentType == .credit {
             if expiryDateString == nil || txtCardNumber.text?.isEmpty == true || txtCVV.text?.isEmpty == true || txtCardHolderName.text?.isEmpty == true {
                 AlertMessage(title: "", userMessage: "Please fill all the fields")
@@ -211,7 +240,8 @@ class CowPayViewController: UIViewController, WKScriptMessageHandler  {
                     return
                 }
                 startLoading()
-                Interactor().sendCreaditCard(cardNumber: txtCardNumber.text ?? "", cardName: txtCardHolderName.text ?? "", month: "05", year: "26", cvv: txtCVV.text ?? ""){ data , erro in
+                
+                interactor.sendCreaditCard(cardNumber: txtCardNumber.text ?? "", cardName: txtCardHolderName.text ?? "", month: date?[0] ?? "", year: date?[1] ?? "", cvv: txtCVV.text ?? ""){ data , erro in
                     self.stopLoading()
                     
                     if let token = data {
@@ -227,7 +257,7 @@ class CowPayViewController: UIViewController, WKScriptMessageHandler  {
         
         if selectedPaymentType == .fawry {
             startLoading()
-            Interactor().sendFawry(){ data , erro in
+            interactor.sendFawry(){ data , erro in
                 self.stopLoading()
                 if let msg = erro {
                     self.AlertMessage(title: "error".localized(), userMessage: msg)
@@ -246,7 +276,7 @@ class CowPayViewController: UIViewController, WKScriptMessageHandler  {
             if txtEmail.text?.isEmpty == false , txtAddress.text?.isEmpty == false , txtFloor.text?.isEmpty == false , txtDistrict.text?.isEmpty == false , txtApartment.text?.isEmpty == false , selectectedCity != nil , txtName.text?.isEmpty == false , txtPhone.text?.isEmpty == false {
 
                 startLoading()
-                Interactor().sendCashCollection(name: txtName.text!,email: txtEmail.text!,phone: txtPhone.text!,address: txtAddress.text!,floor: txtFloor.text!,district: txtDistrict.text!,apartment: txtApartment.text!,index: Int(selectectedCity ?? "0") ?? 0){ data , erro in
+                interactor.sendCashCollection(name: txtName.text!,email: txtEmail.text!,phone: txtPhone.text!,address: txtAddress.text!,floor: txtFloor.text!,district: txtDistrict.text!,apartment: txtApartment.text!,index: Int(selectectedCity ?? "0") ?? 0){ data , erro in
                     self.stopLoading()
                     if let msg = erro {
                         self.AlertMessage(title: "error".localized(), userMessage: msg)
@@ -426,7 +456,7 @@ extension CowPayViewController {
     }
 
 extension CowPayViewController {
-    func showDialogue(with Success: Bool , completion: @escaping () -> Void , text: String) {
+    func showDialogue(with Success: Bool  , text: String, completion: @escaping () -> Void) {
         let dialogueVC = CowPayDialogueViewController()
         dialogueVC.modalPresentationStyle = .overCurrentContext
         if Success {

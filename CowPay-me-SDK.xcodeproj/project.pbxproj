@@ -50,6 +50,7 @@
 		B18CF66A26EFDDC20099EBBC /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CF66926EFDDC20099EBBC /* Interactor.swift */; };
 		B18CF67026EFE0090099EBBC /* PaymentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CF66F26EFE0090099EBBC /* PaymentInfo.swift */; };
 		B18CF67B26EFFA8E0099EBBC /* MonthYearPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CF67A26EFFA8E0099EBBC /* MonthYearPickerView.swift */; };
+		B1C1A7C426F3700B003F2D69 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C1A7C326F3700B003F2D69 /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 		B18CF66926EFDDC20099EBBC /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		B18CF66F26EFE0090099EBBC /* PaymentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentInfo.swift; sourceTree = "<group>"; };
 		B18CF67A26EFFA8E0099EBBC /* MonthYearPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthYearPickerView.swift; sourceTree = "<group>"; };
+		B1C1A7C326F3700B003F2D69 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		D21C04F86747DCDC9F0C538E /* Pods-CowPay-me-SDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CowPay-me-SDK.release.xcconfig"; path = "Target Support Files/Pods-CowPay-me-SDK/Pods-CowPay-me-SDK.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -325,6 +327,7 @@
 				B18CF66F26EFE0090099EBBC /* PaymentInfo.swift */,
 				B17FE7B826F1486400AA1ECE /* Fawry.swift */,
 				B17FE7C226F1521A00AA1ECE /* CashCollection.swift */,
+				B1C1A7C326F3700B003F2D69 /* Card.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 			files = (
 				4A9D14C326ECD55B00C0F3E4 /* UIViewExtension.swift in Sources */,
 				4A9D14C526ECD55B00C0F3E4 /* UIImageExtension.swift in Sources */,
+				B1C1A7C426F3700B003F2D69 /* Card.swift in Sources */,
 				B18CF66226EFD8B50099EBBC /* NVCViewController.swift in Sources */,
 				4A9D14BE26ECD55B00C0F3E4 /* UIImageViewExtension.swift in Sources */,
 				4A9D149726ECD2AE00C0F3E4 /* Constants.swift in Sources */,
@@ -727,13 +731,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9DHV8KGGRW;
 				INFOPLIST_FILE = "CowPay-me-SDK/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ahmed.CowPay-me-SDK";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cowpay.CowPay-me-SDK";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -747,13 +752,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9DHV8KGGRW;
 				INFOPLIST_FILE = "CowPay-me-SDK/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ahmed.CowPay-me-SDK";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.cowpay.CowPay-me-SDK";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

@@ -9,5 +9,7 @@ import Foundation
 
 protocol CowpayCallback {
     func successByFawry(fawry:Fawry?)
+    func successByCard(card:Card?)
+    func error()
     func successByCashCollection(cashCollection:CashCollection?)
 }
