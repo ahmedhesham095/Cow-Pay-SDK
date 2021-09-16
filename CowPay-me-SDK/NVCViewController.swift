@@ -9,22 +9,20 @@ import UIKit
 
 class NVCViewController: UIViewController, CowpayCallback {
     func successByCard(card: Card?) {
-        print(card?.cowpayReferenceId)
+        
     }
     
     func error() {
-        print("ERROR")
+       
     }
     
     func successByCashCollection(cashCollection: CashCollection?) {
-        print("call back successByCashCollection ")
-        print(cashCollection?.cowpayReferenceId)
+    
     }
     
     
     func successByFawry(fawry: Fawry?) {
-        print("call back")
-        print(fawry?.cowpayReferenceId)
+     
     }
     
 

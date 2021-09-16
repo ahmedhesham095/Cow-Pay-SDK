@@ -51,6 +51,7 @@
 		B18CF67026EFE0090099EBBC /* PaymentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CF66F26EFE0090099EBBC /* PaymentInfo.swift */; };
 		B18CF67B26EFFA8E0099EBBC /* MonthYearPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CF67A26EFFA8E0099EBBC /* MonthYearPickerView.swift */; };
 		B1C1A7C426F3700B003F2D69 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1C1A7C326F3700B003F2D69 /* Card.swift */; };
+		B1C1A7C926F37EE7003F2D69 /* sampleweb.html in Resources */ = {isa = PBXBuildFile; fileRef = B1C1A7C826F37EE7003F2D69 /* sampleweb.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,7 @@
 		B18CF66F26EFE0090099EBBC /* PaymentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentInfo.swift; sourceTree = "<group>"; };
 		B18CF67A26EFFA8E0099EBBC /* MonthYearPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthYearPickerView.swift; sourceTree = "<group>"; };
 		B1C1A7C326F3700B003F2D69 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		B1C1A7C826F37EE7003F2D69 /* sampleweb.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = sampleweb.html; sourceTree = "<group>"; };
 		D21C04F86747DCDC9F0C538E /* Pods-CowPay-me-SDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CowPay-me-SDK.release.xcconfig"; path = "Target Support Files/Pods-CowPay-me-SDK/Pods-CowPay-me-SDK.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -248,6 +250,7 @@
 				4A9D147326ECC0A600C0F3E4 /* CowPay.storyboard */,
 				4A83F03B26EBEEE2000A62EB /* Main.storyboard */,
 				4A83F03E26EBEEE4000A62EB /* Assets.xcassets */,
+				B1C1A7C826F37EE7003F2D69 /* sampleweb.html */,
 			);
 			path = "CowPay-me-SDK";
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				4A9D148F26ECD27200C0F3E4 /* Localizable.strings in Resources */,
 				4A83F04226EBEEE4000A62EB /* LaunchScreen.storyboard in Resources */,
 				4A4F03FE26F115820028A800 /* CowPayDialogueViewController.xib in Resources */,
+				B1C1A7C926F37EE7003F2D69 /* sampleweb.html in Resources */,
 				4A83F03F26EBEEE4000A62EB /* Assets.xcassets in Resources */,
 				4A83F03D26EBEEE2000A62EB /* Main.storyboard in Resources */,
 				4A9D147426ECC0A600C0F3E4 /* CowPay.storyboard in Resources */,

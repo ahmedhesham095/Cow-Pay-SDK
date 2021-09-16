@@ -15,34 +15,36 @@ enum CardType {
     case cashCollection
 }
 
-extension CowPayViewController :WKNavigationDelegate{
+extension CowPayViewController : WKScriptMessageHandler{
     
-  
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        var result = [String:String]()
-        print("bassiouny" )
-        print( webView.url?.query)
-        if let query = webView.url?.query{
-        let arr = query.components(separatedBy: "&")
-            for item in arr {
-                let content = item.components(separatedBy: "=")
-                let s = content[0]
-                result[s] = content[1]
-            }
-            let ticket = result["ticketNumber"] ?? ""
-            if(result["result"]?.uppercased() == "SUCCESS" || !(ticket.isEmpty)){
-                showDialogue(with: true, text: "success".localized()){
-                    CowpaySDK.callback?.successByCard(card: self.interactor.card)
-                    self.navigationController?.dismiss(animated: true, completion: nil)
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        if message.name == "jsMessageHandler"{
+            if let body = message.body as? String{
+            print(body)
+                let data = body.data(using: .utf8)!
+                do {
+                    if let jsonArray = try JSONSerialization.jsonObject(with: data, options : .allowFragments) as? Dictionary<String,Any>
+                    {
+                        if(jsonArray["payment_status"] as! String == "PAID"){
+                            showDialogue(with: true, text: "Success"){
+                                CowpaySDK.callback?.successByCard(card: Card(paymentGatewayReferenceId: jsonArray["payment_gateway_reference_id"] as! String, cowpayReferenceId: jsonArray["cowpay_reference_id"] as! String))
+                                self.navigationController?.dismiss(animated: true, completion: nil)
+                            }
+                        }else {
+                            CowpaySDK.callback?.error()
+                        }
+                    } else {
+                        CowpaySDK.callback?.error()
+                    }
+                
+                }catch {
+                    CowpaySDK.callback?.error()
                 }
-             
-            }else {
-                CowpaySDK.callback?.error()
             }
-        }
+        
     }
     
-    
+    }
 }
 
 
@@ -53,11 +55,19 @@ class CowPayViewController: UIViewController   {
     
     private func launchWebView(token:String){
         
-        webView.isHidden = false
-      
 
-        webView.load(URLRequest(url: URL(string:CowpaySDK.getUrlForm()+token)!))
-        webView.navigationDelegate = self
+      
+            webView.isHidden = false
+                webView.configuration.preferences.javaScriptEnabled = true
+            webView.load(URLRequest(url: URL(string:CowpaySDK.getUrlForm()+token)!))
+            
+            
+            let contentController = WKUserContentController()
+            
+        webView.configuration.userContentController = contentController
+            
+        webView.configuration.userContentController.add(self, name: "jsMessageHandler")
+        
         
         
     }
@@ -155,6 +165,8 @@ class CowPayViewController: UIViewController   {
             txtPhone.placeholder = "رقم الهاتف"
             txtPhone.textAlignment = .right
         }
+        
+
         
         // ---------------------- Dialogue -------------------------------//
 //        let completion = { print("Bassiouny test")}

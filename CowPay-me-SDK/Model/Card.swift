@@ -9,5 +9,6 @@ import Foundation
 
 
 struct Card {
-    var cowpayReferenceId = 0
+    var paymentGatewayReferenceId = ""
+    var cowpayReferenceId = ""
 }
