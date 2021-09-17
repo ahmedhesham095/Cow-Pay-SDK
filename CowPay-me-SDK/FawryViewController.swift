@@ -25,7 +25,7 @@ class FawryViewController: UIViewController {
 
     @IBAction func copyAction(_ sender: Any) {
         UIPasteboard.general.string = fawryCodeLabel.text
-        AlertMessage(title: "", userMessage: "copied".localized())
+        self.showDialogue(with: true, text: "copied".localized(), completion: {})
     }
     
     
@@ -34,6 +34,19 @@ class FawryViewController: UIViewController {
         self.navigationController?.dismiss(animated: true, completion: nil)
 //        let keyWindow = UIApplication.shared.windows.first { $0.isKeyWindow }
 //        keyWindow?.dismiss()
+    }
+    
+    func showDialogue(with Success: Bool  , text: String, completion: @escaping () -> Void) {
+        let dialogueVC = CowPayDialogueViewController()
+        dialogueVC.modalPresentationStyle = .overCurrentContext
+        if Success {
+            dialogueVC.image = UIImage(named: "ic_success")
+        } else {
+            dialogueVC.image = UIImage(named: "ic_warning")
+        }
+        dialogueVC.titleText = text
+        dialogueVC.action = completion
+        self.present(dialogueVC, animated: true, completion: nil)
     }
     
 }
