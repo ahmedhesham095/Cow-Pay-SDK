@@ -58,7 +58,7 @@ class Interactor {
         json["floor"] = floor
         json["district"] = district
         json["apartment"] = apartment
-        json["expiry_month"] = cityCodes[index]
+        json["city_code"] = cityCodes[index]
         json["customer_name"] = name
         json["customer_email"] = email
         json["customer_mobile"] = phone

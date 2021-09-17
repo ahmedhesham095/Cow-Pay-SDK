@@ -315,7 +315,6 @@ class CowPayViewController: UIViewController   {
                         self.showDialogue(with: false, text: msg){
                             
                         CowpaySDK.callback?.error()
-                        self.navigationController?.dismiss(animated: true, completion: nil)
                         }
                   
                     }
