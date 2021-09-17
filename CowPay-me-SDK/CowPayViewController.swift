@@ -199,6 +199,7 @@ class CowPayViewController: UIViewController   {
     
     @IBAction func backAction(_ sender: Any) {
         self.navigationController?.dismiss(animated: true, completion: nil)
+        CowpaySDK.callback?.closeByUser()
     }
     
     @IBAction func setupCreditCard(_ sender: Any) {

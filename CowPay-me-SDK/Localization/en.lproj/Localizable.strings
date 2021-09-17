@@ -54,3 +54,5 @@
 "• Make sure Your data is correct" = "• Make sure your data is correct";
 "• Pay and Keep the receipt" = "• Pay and keep the receipt";
 "Back" = "Back";
+"order_success" = "Your order has been submitted successfully";
+"order_failed" = "Payment failed";

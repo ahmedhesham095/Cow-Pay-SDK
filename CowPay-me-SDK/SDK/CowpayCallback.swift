@@ -12,4 +12,5 @@ protocol CowpayCallback {
     func successByCard(card:Card?)
     func error()
     func successByCashCollection(cashCollection:CashCollection?)
+    func closeByUser()
 }

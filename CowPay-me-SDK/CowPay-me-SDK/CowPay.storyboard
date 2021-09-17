@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qIg-II-hqL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qIg-II-hqL">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -273,8 +273,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create  &amp; Manage Payment Links For Your Payment Seamlisely" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CmI-29-3w4">
-                                        <rect key="frame" x="15" y="48" width="374" height="31.5"/>
-                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
+                                        <rect key="frame" x="15" y="48" width="374" height="29"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="12"/>
                                         <color key="textColor" systemColor="opaqueSeparatorColor"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -287,6 +287,7 @@
                                     <constraint firstItem="sCH-70-Js5" firstAttribute="leading" secondItem="F44-yN-qk2" secondAttribute="leading" constant="15" id="732-xA-nQz"/>
                                     <constraint firstAttribute="trailing" secondItem="cOH-qR-3xp" secondAttribute="trailing" constant="10" id="7as-L8-2T7"/>
                                     <constraint firstItem="apG-V5-koe" firstAttribute="leading" secondItem="sCH-70-Js5" secondAttribute="trailing" constant="5" id="Mr3-ch-ViB"/>
+                                    <constraint firstAttribute="bottom" secondItem="CmI-29-3w4" secondAttribute="bottom" constant="8" id="Od4-dK-SD9"/>
                                     <constraint firstItem="sCH-70-Js5" firstAttribute="top" secondItem="F44-yN-qk2" secondAttribute="top" constant="10" id="R7D-aR-jXa"/>
                                     <constraint firstItem="cOH-qR-3xp" firstAttribute="centerY" secondItem="apG-V5-koe" secondAttribute="centerY" id="WiZ-5z-fwT"/>
                                     <constraint firstItem="CmI-29-3w4" firstAttribute="leading" secondItem="sCH-70-Js5" secondAttribute="leading" id="Z1C-A0-GuC"/>
@@ -685,8 +686,8 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create  &amp; Manage Payment Links For Your Payment Seamlisely" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePj-O2-sly">
-                                        <rect key="frame" x="15" y="48" width="354" height="31.5"/>
-                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="14"/>
+                                        <rect key="frame" x="15" y="48" width="354" height="33"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="12"/>
                                         <color key="textColor" systemColor="opaqueSeparatorColor"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -705,6 +706,7 @@
                                     <constraint firstAttribute="trailing" secondItem="ePj-O2-sly" secondAttribute="trailing" constant="5" id="Uto-KW-fcR"/>
                                     <constraint firstAttribute="bottom" secondItem="HKH-Lg-TtC" secondAttribute="bottom" constant="5" id="YbZ-9H-58F"/>
                                     <constraint firstItem="0UD-gg-xGD" firstAttribute="top" secondItem="cKR-Je-MCS" secondAttribute="top" constant="10" id="nOC-mB-60h"/>
+                                    <constraint firstAttribute="bottom" secondItem="ePj-O2-sly" secondAttribute="bottom" constant="4" id="ntW-vF-OSb"/>
                                     <constraint firstItem="ePj-O2-sly" firstAttribute="top" secondItem="0UD-gg-xGD" secondAttribute="bottom" constant="10" id="x4Q-qg-6dZ"/>
                                     <constraint firstItem="HKH-Lg-TtC" firstAttribute="leading" secondItem="0UD-gg-xGD" secondAttribute="leading" id="xEd-wh-S4e"/>
                                     <constraint firstItem="D3C-6B-dYh" firstAttribute="leading" secondItem="0UD-gg-xGD" secondAttribute="trailing" constant="5" id="xHI-R8-8zL"/>

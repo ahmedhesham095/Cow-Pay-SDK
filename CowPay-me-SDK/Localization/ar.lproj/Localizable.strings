@@ -55,3 +55,5 @@
 "• Make sure Your data is correct" = "• تأكد من صحة بياناتك";
 "• Pay and Keep the receipt" = "• ادفع واحتفظ بالإيصال";
 "Back" = "العودة";
+"order_success" = "تم تقديم طلبك بنجاح";
+"order_failed" = "فشلت عملية الدفع";
