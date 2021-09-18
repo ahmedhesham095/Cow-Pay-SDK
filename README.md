@@ -40,23 +40,24 @@ CowpayCallback protocol
 
 ```swift 
 extension ViewController : CowpayCallback {
-    
+    // success returned by fawry
     func successByFawry(fawry: Fawry?) {
         
     }
     
+    // success returned by credit card
     func successByCard(card: Card?) {
         
     }
-    
+    // payment error
     func error() {
         
     }
-    
+    // success by cash collection
     func successByCashCollection(cashCollection: CashCollection?) {
         
     }
-    
+    // the user  closed the payment view without paying
     func closeByUser() {
         
     }
