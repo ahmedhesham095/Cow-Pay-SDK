@@ -35,7 +35,8 @@ if let window = UIApplication.shared.windows.first {
     cowpaySDk.launchSDKView(paymentInfo: paymentInfo, callback: self, window: window)
 }
 ```
-## you can verify the payment status through the following methods in <!-- CowpayCallback protocol   -->
+## You can verify the payment status through the following methods in 
+CowpayCallback protocol 
 
 ```swift 
 extension ViewController : CowpayCallback {
