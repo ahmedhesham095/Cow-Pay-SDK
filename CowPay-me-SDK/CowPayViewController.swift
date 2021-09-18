@@ -177,18 +177,12 @@ class CowPayViewController: UIViewController   {
             txtPhone.placeholder = "رقم الهاتف"
             txtPhone.textAlignment = .right
         }
-        
 
-        
-        // ---------------------- Dialogue -------------------------------//
-//        let completion = { print("Bassiouny test")}
-//        let text = "Your order has been submitted successfully"
-//        self.showDialogue(with: true, completion: completion, text: text)
-        // ---------------------------------------------------------- //
         
         setUserInfo()
         view.addGestureRecognizer(UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:))))
     }
+    
     
     private func setUserInfo(){
         txtEmail.text = CowpaySDK.paymentInfo?.customerEmail

@@ -38,3 +38,9 @@ public enum Enviroment {
     case staging
     case live
 }
+
+
+public enum Language {
+    case en
+    case ar
+}

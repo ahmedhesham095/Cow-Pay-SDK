@@ -46,8 +46,7 @@
 		B17FE7C326F1521A00AA1ECE /* CashCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17FE7C226F1521A00AA1ECE /* CashCollection.swift */; };
 		B18CF64626EFCB480099EBBC /* ServiceApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CF64526EFCB480099EBBC /* ServiceApi.swift */; };
 		B18CF64E26EFCDB60099EBBC /* CowpaySDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CF64D26EFCDB60099EBBC /* CowpaySDK.swift */; };
-		B18CF65726EFD3FD0099EBBC /* MyCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CF65626EFD3FD0099EBBC /* MyCode.swift */; };
-		B18CF66226EFD8B50099EBBC /* NVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CF66126EFD8B50099EBBC /* NVCViewController.swift */; };
+		B18CF66226EFD8B50099EBBC /* SampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CF66126EFD8B50099EBBC /* SampleViewController.swift */; };
 		B18CF66A26EFDDC20099EBBC /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CF66926EFDDC20099EBBC /* Interactor.swift */; };
 		B18CF67026EFE0090099EBBC /* PaymentInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CF66F26EFE0090099EBBC /* PaymentInfo.swift */; };
 		B18CF67B26EFFA8E0099EBBC /* MonthYearPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18CF67A26EFFA8E0099EBBC /* MonthYearPickerView.swift */; };
@@ -121,8 +120,7 @@
 		B17FE7C226F1521A00AA1ECE /* CashCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashCollection.swift; sourceTree = "<group>"; };
 		B18CF64526EFCB480099EBBC /* ServiceApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceApi.swift; sourceTree = "<group>"; };
 		B18CF64D26EFCDB60099EBBC /* CowpaySDK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CowpaySDK.swift; sourceTree = "<group>"; };
-		B18CF65626EFD3FD0099EBBC /* MyCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCode.swift; sourceTree = "<group>"; };
-		B18CF66126EFD8B50099EBBC /* NVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NVCViewController.swift; sourceTree = "<group>"; };
+		B18CF66126EFD8B50099EBBC /* SampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleViewController.swift; sourceTree = "<group>"; };
 		B18CF66926EFDDC20099EBBC /* Interactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
 		B18CF66F26EFE0090099EBBC /* PaymentInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentInfo.swift; sourceTree = "<group>"; };
 		B18CF67A26EFFA8E0099EBBC /* MonthYearPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthYearPickerView.swift; sourceTree = "<group>"; };
@@ -220,8 +218,7 @@
 				4A83F03926EBEEE2000A62EB /* CowPayInitializer.swift */,
 				4A83F04026EBEEE4000A62EB /* LaunchScreen.storyboard */,
 				4A83F04326EBEEE4000A62EB /* Info.plist */,
-				B18CF65626EFD3FD0099EBBC /* MyCode.swift */,
-				B18CF66126EFD8B50099EBBC /* NVCViewController.swift */,
+				B18CF66126EFD8B50099EBBC /* SampleViewController.swift */,
 				4A4F03F526F108CA0028A800 /* FawryViewController.swift */,
 			);
 			path = "CowPay-me-SDK";
@@ -520,7 +517,7 @@
 				4A9D14C326ECD55B00C0F3E4 /* UIViewExtension.swift in Sources */,
 				4A9D14C526ECD55B00C0F3E4 /* UIImageExtension.swift in Sources */,
 				B1C1A7C426F3700B003F2D69 /* Card.swift in Sources */,
-				B18CF66226EFD8B50099EBBC /* NVCViewController.swift in Sources */,
+				B18CF66226EFD8B50099EBBC /* SampleViewController.swift in Sources */,
 				4A9D14BE26ECD55B00C0F3E4 /* UIImageViewExtension.swift in Sources */,
 				4A9D149726ECD2AE00C0F3E4 /* Constants.swift in Sources */,
 				B18CF64626EFCB480099EBBC /* ServiceApi.swift in Sources */,
@@ -550,7 +547,6 @@
 				4A4F03FD26F115820028A800 /* CowPayDialogueViewController.swift in Sources */,
 				4A9D14C226ECD55B00C0F3E4 /* UITableViewExtension.swift in Sources */,
 				4A9D14C826ECD55B00C0F3E4 /* Encodable.swift in Sources */,
-				B18CF65726EFD3FD0099EBBC /* MyCode.swift in Sources */,
 				B18CF67026EFE0090099EBBC /* PaymentInfo.swift in Sources */,
 				4A9D14CE26ECD55B00C0F3E4 /* TableViewExtension.swift in Sources */,
 			);

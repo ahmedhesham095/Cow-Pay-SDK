@@ -13,11 +13,15 @@ class CowPayInitializer {
 
     private var lang = "en"
     
-    public func initSDK(token:String,merchantCode:String,haskey:String,enviroment:Enviroment,with lang: String){
+    public func initSDK(token:String,merchantCode:String,haskey:String,enviroment:Enviroment,with lang: Language){
         CowpaySDK.token = token
         CowpaySDK.merchantCode = merchantCode
         CowpaySDK.haskey = haskey
-        self.lang = lang
+        if (lang == Language.en){
+        self.lang = "en"
+        }else{
+        self.lang = "ar"
+        }
         CowpaySDK.enviroment = enviroment
     }
     
